@@ -3,7 +3,7 @@
     {
       "type": "menu",
       "settings": {
-        "name": "QGIS [Country]",
+        "name": "QGIS Österreich",
         "children": [
           {
             "type": "second-menu",
@@ -15,36 +15,36 @@
           {
             "type": "second-menu",
             "settings": {
-              "name": "About Us",
+              "name": "Verein",
               "href": "/about-us/"
             }
           },
           {
             "type": "second-menu",
             "settings": {
-              "name": "Case Studies",
-              "href": "/case-studies/"
+              "name": "Neuigkeiten",
+              "href": "/neuigkeiten/"
             }
           },
           {
             "type": "second-menu",
             "settings": {
-              "name": "Events",
+              "name": "Arbeitsgruppen",
+              "href": "/arbeitsgruppen/"
+            }
+          },
+          {
+            "type": "second-menu",
+            "settings": {
+              "name": "Mitglied werden",
+              "href": "/mitgliedschaft/"
+            }
+          },
+          {
+            "type": "second-menu",
+            "settings": {
+              "name": "Veranstaltungen",
               "href": "/events/"
-            }
-          },
-          {
-            "type": "second-menu",
-            "settings": {
-              "name": "Community",
-              "href": "/community/"
-            }
-          },
-          {
-            "type": "second-menu",
-            "settings": {
-              "name": "Tutorials",
-              "href": "/tutorials/"
             }
           },
           {
@@ -57,8 +57,8 @@
           {
             "type": "second-menu",
             "settings": {
-              "name": "Rules",
-              "href": "/rules/"
+              "name": "Datenschutzerklärung",
+              "href": "/datenschutzerklaerung/"
             }
           }
         ]
