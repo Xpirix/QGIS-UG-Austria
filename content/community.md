@@ -2,7 +2,7 @@
 type: "page"
 title: "Community"
 subtitle: "QGIS ecosystem"
-draft: false
+draft: true
 sidebar: true
 ---
 

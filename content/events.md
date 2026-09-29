@@ -1,34 +1,38 @@
 ---
 type: "page"
-title: "Events"
-subtitle: "Upcoming and past events"
+title: "Veranstaltungen"
+subtitle: "Kommende und vergangene Events"
 draft: false
 sidebar: true
 ---
 
 {{< content-start >}}
 
-# Events
+# Veranstaltungen
 
-Stay updated with our upcoming meetups, workshops, and conferences. Join us to learn, share, and network with fellow QGIS enthusiasts.
+Bleiben Sie über unsere kommenden Treffen, Workshops und Vorträge informiert.
+Kommen Sie vorbei, um zu lernen, Erfahrungen auszutauschen und andere
+QGIS-Begeisterte aus Österreich zu treffen.
 
-## Upcoming Events
+## Kommende Veranstaltungen
 
 {{< rich-box-start layoutClass="has-right rounded" >}}
 {{< rich-content-start themeClass="coloring-2" >}}
-### QGIS User Group Meetup (Placeholder)
+### Jahrestreffen der QGIS Anwendergruppe Österreich
 
-When: [Date]  
-Where: [City / Online]
+Die Generalversammlung findet einmal pro Jahr statt – alle Mitglieder sind
+herzlich eingeladen.
 
-{{< button class = "is-primary1" link = "https://usergroup.qgis.org/" text = "Learn more" >}} 
+Wann: [Termin folgt]  
+Wo: [Ort / Online]
+
+{{< button class = "is-primary1" link = "mailto:info@qgis.at" text = "Kontakt aufnehmen" >}}
 
 {{< rich-content-end >}}
 {{< rich-right-start >}}
-![](https://usergroup.qgis.org/visualization_center.webp)
+![](/img/oldsite/workshops.jpg)
 {{< rich-right-end >}}
 {{< rich-box-end >}}
-
 
 {{< columns-start >}}
 {{< column-start>}}
@@ -36,18 +40,17 @@ Where: [City / Online]
 {{< rich-box-start >}}
 {{< rich-content-start themeClass="coloring-1">}}
 
-### Regular Meetups
+### Treffen & Austausch
 
-We organize regular meetups where members can:
-- Share their latest QGIS projects
-- Learn new techniques and workflows
-- Get help with QGIS challenges
-- Network with other users
+Bei unseren Treffen können Mitglieder:
+- ihre aktuellen QGIS-Projekte vorstellen
+- neue Techniken und Workflows kennenlernen
+- Hilfe bei QGIS-Fragen erhalten
+- sich mit anderen Anwender\*innen vernetzen
 
-**When:** [Add your meeting schedule]  
-**Where:** [Add your meeting location/online platform]  
-**Registration:** [Add registration information]
-
+**Wann:** [Zeitplan ergänzen]  
+**Wo:** [Ort / Online-Plattform ergänzen]  
+**Anmeldung:** [Hinweise zur Anmeldung ergänzen]
 
 {{< rich-content-end >}}
 {{< rich-box-end >}}
@@ -57,34 +60,36 @@ We organize regular meetups where members can:
 {{< rich-box-start >}}
 {{< rich-content-start themeClass="coloring-1" >}}
 
-### Workshops & Training
+### Workshops & Schulungen
 
-We regularly host hands-on workshops covering:
-- QGIS basics for beginners
-- Advanced analysis techniques
-- Plugin development
-- Cartography and visualization
-- Data processing workflows
+Die Arbeitsgruppe „GIS Schulung und Ausbildung“ organisiert Schulungsformate und
+Lerninhalte zu Themen wie:
+- QGIS-Grundlagen für Einsteiger\*innen
+- Fortgeschrittene Analysemethoden
+- Hydrologische und hydraulische Modellierung
+- Webclienten und Webanwendungen
+- Kartographie und Visualisierung
 
-Check back regularly for upcoming workshop announcements.
-
+Schauen Sie regelmäßig vorbei – neue Workshop-Ankündigungen erscheinen hier und
+auf unserem [X/Twitter-Kanal](https://twitter.com/QGISAT).
 
 {{< rich-content-end >}}
 {{< rich-box-end >}}
 {{< column-end >}}
 {{< columns-end >}}
 
-## Past Events
+## Vergangene Veranstaltungen
 
-[Add information about past events, presentations, or links to recordings]
-
+[Informationen zu vergangenen Veranstaltungen, Präsentationen oder Aufzeichnungen
+werden hier ergänzt.]
 
 {{< rich-box-start icon="💁" layoutClass="tips">}}
 {{< rich-content-start themeClass="coloring-1" >}}
-##### Get Involved
+##### Mitmachen
 
-Want to present at our next meetup or organize an event? Contact us at [your-contact-email]
-
+Sie möchten bei unserem nächsten Treffen einen Vortrag halten oder selbst eine
+Veranstaltung organisieren? Melden Sie sich bei uns:
+[info@qgis.at](mailto:info@qgis.at)
 
 {{< rich-content-end >}}
 {{< rich-box-end >}}

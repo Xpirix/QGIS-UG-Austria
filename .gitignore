@@ -46,3 +46,8 @@ core
 
 # Local AI helper notes
 CLAUDE.md
+
+# Migration working files
+/old-website/
+.code-graph.json
+IDEA.md

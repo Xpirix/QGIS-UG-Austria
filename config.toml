@@ -1,8 +1,8 @@
 # May be overwritten in .github/workflows/github-pages.yml or other config files
 # Update baseURL for your specific User Group deployment
 baseURL = 'https://usergroup.qgis.org/'
-languageCode = 'en-us'
-title = 'QGIS User Group Template'
+locale = 'de-at'
+title = 'QGIS Österreich'
 theme = 'qgis-website-theme'
 # Default pagination.
 # Can override this when needed e.g. {{ range (.Paginator 5).Pages }}
@@ -148,28 +148,28 @@ sectionPagesMenu = 'main'
   weight = 10
 
 [[menu.main]]
-  name = "About Us"
+  name = "Verein"
   url = "/about-us/"
   weight = 20
 
 [[menu.main]]
-  name = "Case Studies"
-  url = "/case-studies/"
+  name = "Neuigkeiten"
+  url = "/neuigkeiten/"
   weight = 30
 
 [[menu.main]]
-  name = "Events"
-  url = "/events/"
+  name = "Arbeitsgruppen"
+  url = "/arbeitsgruppen/"
   weight = 40
 
 [[menu.main]]
-  name = "Community"
-  url = "/community/"
+  name = "Mitglied werden"
+  url = "/mitgliedschaft/"
   weight = 50
 
 [[menu.main]]
-  name = "Tutorials"
-  url = "/tutorials/"
+  name = "Veranstaltungen"
+  url = "/events/"
   weight = 60
 
 [[menu.main]]
@@ -178,8 +178,8 @@ sectionPagesMenu = 'main'
   weight = 70
 
 [[menu.main]]
-  name = "Rules"
-  url = "/rules/"
+  name = "Datenschutzerklärung"
+  url = "/datenschutzerklaerung/"
   weight = 80
 
 [[menu.qgis_org]]

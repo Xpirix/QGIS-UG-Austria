@@ -2,7 +2,7 @@
 type: "page"
 title: "Case Studies"
 subtitle: "Local success stories"
-draft: false
+draft: true
 sidebar: true
 ---
 

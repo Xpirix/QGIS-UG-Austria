@@ -2,7 +2,7 @@
 type: "page"
 title: "Rules"
 subtitle: "Community guidelines and code of conduct"
-draft: false
+draft: true
 sidebar: true
 ---
 

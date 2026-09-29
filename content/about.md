@@ -1,7 +1,7 @@
 ---
 type: "page"
-title: "About Us"
-subtitle: "Meet our community"
+title: "Der Verein"
+subtitle: "QGIS Anwendergruppe Österreich"
 draft: false
 sidebar: true
 url: "/about-us/"
@@ -9,54 +9,92 @@ url: "/about-us/"
 
 {{< content-start >}}
 
-# About Us
+# QGIS Anwendergruppe Österreich
 
-We are a QGIS User Group, committed to promoting open-source geospatial technology and supporting practitioners.
+Verein zur Förderung Freier Software für Geoinformationssysteme
 
-## Our Mission
+## Vereinszweck
 
-Our mission is to:
-- Foster collaboration among QGIS users
-- Promote knowledge sharing and best practices
-- Support the growth of open-source GIS
-- Contribute to the global QGIS community
-- Provide learning opportunities for all skill levels
+Ziel des Vereins ist die Unterstützung und Förderung des QGIS-Projektes und der
+QGIS-Anwender\*innen, um der Allgemeinheit einen Zugang zur Verarbeitung räumlicher
+Daten durch die Verbreitung des freien Geographischen Informationssystems QGIS – im
+Sinne von Freier Software für Geoinformationssysteme – zu ermöglichen.
 
-## Our Team
+## Aktivitäten
 
-### Coordinators / Leadership
+- Förderung der Bildung, des Meinungsaustauschs und der Zusammenarbeit von
+  QGIS-Anwendern, Entwicklern und Forschern.
+- Koordinierung von QGIS Entwicklungen und verfügbaren finanziellen Ressourcen für
+  Weiterentwicklungen der QGIS-Software, die im Interesse der österreichischen
+  QGIS-Anwender\*innen liegen.
+- Öffentlichkeitsarbeit für das QGIS-Projekt innerhalb Österreichs, z.B. durch
+  Informationsveranstaltungen, Bewerbungen, Fallstudien und Artikel in Fachzeitschriften.
+- Die Information der Mitglieder über aktuelle Entwicklungen und Initiativen im
+  QGIS-Umfeld.
+- Unterstützung von Studien oder Forschungsarbeiten im Umfeld von QGIS und Freier
+  Software für Geoinformationssysteme.
+- Sponsoring des allgemeinen QGIS-Projektes ([www.qgis.org](https://qgis.org)) und der
+  weltweiten QGIS-Gemeinschaft.
 
-- **Coordinator:** [Name]
-- **Regional/Local Leads:** [Names by region]
-- **Volunteers:** [Roles: outreach, events, training, comms]
+## Organisation
 
-### Active Members
+Die QGIS Anwendergruppe Österreich ist ein Zusammenschluss von QGIS Anwender\*innen und
+Unterstützer\*innen in Österreich. Die QGIS Anwendergruppe ist ein Verein im Sinne des
+österreichischen Vereinsgesetz 2002.
 
-We have members from diverse backgrounds including:
-- GIS professionals
-- Environmental scientists
-- Urban planners
-- Researchers
-- Students
-- Hobbyists
+Die QGIS Anwendergruppe besteht aus:
 
-## Our Community
+- Natürlichen Personen
+- Juristischen Personen (Behörden, Firmen und Forschungseinrichtungen)
+- Ehrenmitgliedern
 
-We welcome everyone interested in QGIS, from complete beginners to experienced professionals. Our community values:
-- **Openness:** We embrace open-source principles and open collaboration
-- **Inclusivity:** Everyone is welcome regardless of background or skill level
-- **Learning:** We support continuous learning and knowledge sharing
-- **Contribution:** We encourage active participation and giving back to the community
+Die formalen Einheiten der QGIS Usergruppe sind:
 
-## Contact Us
+- Die Generalversammlung (1x pro Jahr)
+- Der Vorstand (Obmann/Obfrau, Obmann Stellvertreter\*in, Schriftführer\*in,
+  Kassier\*in sowie kooptierte Beisitzer\*innen)
+- Die Rechnungsprüfer\*innen
 
-- **Email:** [your-email@example.com]
-- **Mailing List:** [link to mailing list]
-- **Social Media:** [links to social media]
-- **Chat:** [link to chat platform if available]
+Statuten der QGIS Anwendergruppe Österreich:
+[Statuten (PDF)](/download/Statuten_AUT_qgis.pdf)
 
-## Affiliations
+### Der Vorstand
 
-We are an official QGIS User Group recognized by the [QGIS Project](https://qgis.org). Learn more about QGIS User Groups [here](https://qgis.org/community/groups/).
+| Rolle | Name | Organisation |
+|---|---|---|
+| Obmann | Paul Stampfl | [Telesis GmbH](https://telesis.at/) |
+| Stellvertreter Obmann | Peter Laubichler | [spider-sol GmbH](http://www.hydro-sol.at/) |
+| Kassier | Andreas Jeitler | [Hydro Ingenieure GmbH](https://www.hydro-ing.at/) |
+| Schriftführerin | Soyol Marksteiner | [GISolutions e.U](https://gisolutions.at/) |
+
+### Kooptierte Mitglieder
+
+| Name | Organisation |
+|---|---|
+| Werner Macho | [QGIS.ORG](https://qgis.org/) |
+| Christian Schilchegger | [IT Schilchegger](https://it-schilchegger.selfip.com/) |
+| Ralf Sembritzki | [Hansa Luftbild AG](https://www.hansaluftbild.de/) |
+| Franz Gusenbauer | [igutech](https://www.igutech.at/) |
+| Heiko Kinzl | [hydro-IT GmbH](http://www.hydro-it.com/) |
+
+## Vernetzung
+
+Als offizielle QGIS-Anwendergruppe versteht sich die QGIS Anwendergruppe Österreich als
+Teil der weltweiten QGIS-Gemeinschaft und ist als stimmberechtigtes Mitglied in die
+Entscheidungen der QGIS.ORG Vereinigung involviert.
+
+## Kontakt
+
+- **E-Mail:** [info@qgis.at](mailto:info@qgis.at)
+- **Telefon:** +43 664 4852504
+- **Web:** [www.qgis.at](https://www.qgis.at)
+- **GitHub:** [github.com/QGIS-Austria](https://github.com/QGIS-Austria)
+
+**Adresse:**
+
+QGIS Anwendergruppe Österreich
+Unterlinden 16a
+6922 Wolfurt
+Vorarlberg | Österreich
 
 {{< content-end >}}

@@ -1,60 +1,81 @@
 ---
 type: "page"
-title: "QGIS [Country]"
-subtitle: "Connecting QGIS users in our community"
+title: "QGIS Österreich"
+subtitle: "Anwendergruppe Österreich – Verein zur Förderung Freier Software für Geoinformationssysteme"
 draft: false
 heroSize: "is-medium"
-heroLogo: "img/qgis_ch.png"
+heroLogo: "img/qgis_at.png"
 HeroImage: "img/hegobg1.webp"
 HasBanner: true
 sidebar: true
-ButtonText: "Join Us!" 
-ButtonLink: "/events/"
+ButtonText: "Mitglied werden"
+ButtonLink: "/mitgliedschaft/"
 ---
 
 {{< content-start >}}
 
-## Welcome to the QGIS User Group
+## Ein freies Geographisches Informationssystem
 
-We are a community of QGIS users passionate about open-source geospatial technology. Our mission is to promote the use of QGIS, share knowledge, and support each other in our geospatial projects.
+QGIS ist ein freies und benutzerfreundliches Geoinformationssystem zum Betrachten,
+Bearbeiten, Erfassen und Analysieren von raumbezogenen Daten und Information, das unter
+der [GNU General Public License](https://www.gnu.org/licenses/gpl.html) lizenziert ist.
+QGIS ist nicht nur ein Desktop-GIS. QGIS ist Kern einer modernen Geodateninfrastruktur
+(GDI) mit räumlichem Dateibrowser, Server, flexibel anwendbaren Plugins zur
+Funktionserweiterung und mehreren zur Auswahl stehenden WebGIS-Anwendungen.
 
 {{< columns-start >}}
 {{< column-start class="is-flex-direction-column is-one-third left-title">}}
 
-## What We Do
+## Was QGIS bietet
 {{< column-end >}}
-
 
 {{< column-start class="is-flex-direction-column is-two-thirds">}}
 {{< rich-box-start >}}
-{{< rich-content-start themeClass="coloring-1" >}} 
+{{< rich-content-start themeClass="coloring-1" >}}
 
-- Organize regular meetups and events
-- Share best practices and use cases
-- Provide support for QGIS users at all levels
-- Contribute to the QGIS project
-- Network with geospatial professionals
+- **Betriebssysteme:** QGIS läuft unter Linux, Unix, Mac OSX, Windows und Android und
+  unterstützt eine Vielzahl an Vektor-, Raster- und Datenformaten, -funktionen und
+  Datenbanken, wie PostGIS/PostgreSQL und SpatiaLite.
+- **Datenverarbeitung:** Wesentliche Merkmale der QGIS Umgebung sind die breite
+  Unterstützung zum Erfassen, Analysieren und Transformieren von Geodaten sowie eine
+  Druckzusammenstellung zum Erstellen von qualitativ hochwertigen Karten.
+- **Geodateninfrastruktur – API:** QGIS bietet eine offene Schnittstellenarchitektur,
+  die das Anwenden von QGIS-Funktionalitäten in anderen Programmen oder das Schreiben
+  von Plugins zur Funktionserweiterung erlaubt.
+- **Visualisierungsbibliothek:** Der QGIS Server ermöglicht die Veröffentlichung von
+  QGIS-Projekten und Layern als OGC kompatible WMS-, WFS- und WCS-Dienste. Durch
+  Benutzung derselben Visualisierungsbibliothek lassen sich Desktop Layer, Attribute
+  und Layouts 1:1 im Internet abbilden.
+- **QGIS-Webclienten:** Die Anwender profitieren durch das Angebot unterschiedlicher
+  WebClienten, modernen Symbolisierungs-, Beschriftungs- und Überblendungsfunktionen
+  und umfangreichen kartographischen Designmöglichkeiten.
+- **QGIS auf Handy und Tablet:** Die QGIS-Geodateninfrastruktur ist nicht auf die
+  Desktop Anwendungen beschränkt. Mobile und Touch-optimierte Apps ermöglichen die
+  ortsunabhängige Erfassung von Felddaten und das Aktualisieren von Geodatenbanken
+  in Echtzeit.
 
 {{< rich-content-end >}}
 {{< rich-box-end >}}
 
 {{< column-end >}}
 {{< columns-end >}}
-
 
 {{< columns-start class="mb-6">}}
 {{< column-start class="is-flex-direction-column is-one-third left-title">}}
 
-## Join Us
+## Der Verein
 {{< column-end >}}
 
 {{< column-start class="is-flex-direction-column is-two-thirds">}}
 {{< rich-box-start >}}
-{{< rich-content-start themeClass="coloring-1" >}} 
+{{< rich-content-start themeClass="coloring-1" >}}
 
-Whether you're a beginner or an experienced QGIS user, everyone is welcome. Join our events, participate in discussions, and help grow the community.
+Ziel des Vereins ist die Unterstützung und Förderung des QGIS-Projektes und der
+QGIS-Anwender\*innen, um der Allgemeinheit einen Zugang zur Verarbeitung räumlicher
+Daten durch die Verbreitung des freien Geographischen Informationssystems QGIS – im
+Sinne von Freier Software für Geoinformationssysteme – zu ermöglichen.
 
-[See our upcoming events](/events/)
+[Mehr über den Verein erfahren](/about-us/)
 
 {{< rich-content-end >}}
 {{< rich-box-end >}}
@@ -62,8 +83,35 @@ Whether you're a beginner or an experienced QGIS user, everyone is welcome. Join
 {{< column-end >}}
 {{< columns-end >}}
 
-## Get Involved
+{{< columns-start class="mb-6">}}
+{{< column-start class="is-flex-direction-column is-one-third left-title">}}
 
-We welcome new members and contributors. Check out our [Rules](/rules/) page to learn about our community guidelines, and visit [About Us](/about-us/) to meet our team and volunteers.
+## Arbeitsgruppen
+{{< column-end >}}
+
+{{< column-start class="is-flex-direction-column is-two-thirds">}}
+{{< rich-box-start >}}
+{{< rich-content-start themeClass="coloring-1" >}}
+
+Im Verein haben sich mehrere Arbeitsgruppen zu unterschiedlichen Fachthemen gebildet –
+von GIS-Schulung und Ausbildung über hydrologische und hydraulische Modellierung bis
+hin zu Webclienten und Webanwendungen. Wer Interesse hat mitzuarbeiten, ist herzlich
+eingeladen.
+
+[Zu den Arbeitsgruppen](/arbeitsgruppen/)
+
+{{< rich-content-end >}}
+{{< rich-box-end >}}
+
+{{< column-end >}}
+{{< columns-end >}}
+
+## Kontakt
+
+- **E-Mail:** [info@qgis.at](mailto:info@qgis.at)
+- **Telefon:** +43 664 4852504
+- **Adresse:** QGIS Anwendergruppe Österreich, Unterlinden 16a, 6922 Wolfurt, Vorarlberg | Österreich
+- **GitHub:** [github.com/QGIS-Austria](https://github.com/QGIS-Austria)
+- **X/Twitter:** [@QGISAT](https://twitter.com/QGISAT)
 
 {{< content-end >}}

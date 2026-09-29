@@ -2,7 +2,7 @@
 type: "page"
 title: "Tutorials"
 subtitle: "Learn QGIS with practical guides"
-draft: false
+draft: true
 sidebar: true
 ---
 

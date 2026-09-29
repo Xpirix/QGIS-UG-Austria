@@ -1,0 +1,43 @@
+{{/* Blog section list layout.
+     The theme's _default/list.html does not render the section's own content,
+     so we render .Content here (content-start shortcode provides the sidebar)
+     and list child blog posts below it. */}}
+{{ partial "header.html" . }}
+{{ partial "menu.html" . }}
+{{ partial "submenu.html" . }}
+{{ partial "contextmenu.html" . }}
+{{ partial "banner.html" . }}
+{{ .Content }}
+
+{{ if gt (len (.Paginator 500).Pages) 0 }}
+<section class="section pt-0">
+    <div class="container">
+        <div class="columns is-multiline is-centered">
+            <div class="content column is-9 is-offset-3">
+                {{ range (.Paginator 500 ).Pages }}
+                {{ $thumbnail_url := .Params.thumbnail }}
+                {{ $has_right := cond (eq $thumbnail_url nil) "" "has-right" }}
+
+                <div class="container rich {{ $has_right }}" >
+                    <div class="cont coloring-1">
+                        <h3 class="">{{ .Title }}</h3>
+                            <p> {{ .Description }}</p>
+                            <a class="button is-primary1 " href="{{ .Permalink }}">
+                                <span>Weiterlesen</span>
+                            </a>
+                    </div>
+                    {{ if $has_right}}
+                    <div class="rich-right">
+                        <img src="{{ $thumbnail_url }}">
+                    </div>
+                    {{end}}
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</section>
+{{ end }}
+
+{{ partial "pagination.html" }}
+{{ partial "footer.html" }}
