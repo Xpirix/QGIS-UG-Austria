@@ -1,5 +1,5 @@
 {
-  description = "QGIS UC Website";
+  description = "QGIS User Group Website";
 
   # nixConfig = {
   #   extra-substituters = [ "https://example.cachix.org" ];
@@ -7,11 +7,17 @@
   # };
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-version.url = "github:QGIS/qgis-nixpkgs-version";
+    nixpkgs.follows = "nixpkgs-version/nixpkgs-26-05";
+    # Fetch the Hugo theme submodule directly as a flake input
+    qgis-website-theme = {
+      url = "github:qgis/QGIS-Hugo-Website-Theme/d79fbad1689e04319549b0ec2099b3d8c1b5d5af";
+      flake = false; # it's not a flake, just a source tree
+    };
   };
 
   outputs =
-    { self, nixpkgs }:
+    { self, nixpkgs, qgis-website-theme,... }:
     let
       # Flake system
       supportedSystems = [
@@ -41,7 +47,12 @@
           pkgs = nixpkgsFor.${system};
         in
         rec {
-          website = pkgs.callPackage ./nix/package.nix { };
+          website = pkgs.callPackage ./nix/package.nix {
+            theme = qgis-website-theme; # <-- pass the theme source in
+            # Commit hash from the flake's git metadata (clean tree only;
+            # falls back to the dirty short rev, then "unknown" for tarballs).
+            commitHash = self.shortRev or self.dirtyShortRev or "unknown";
+           };
           default = website;
         }
       );
@@ -116,6 +127,23 @@
               echo "-----------------------"
             '';
           };
+        }
+      );
+
+      #
+      ### CHECKS
+      #
+
+      checks = forAllSystems (
+        system:
+        let
+          pkgs = nixpkgsFor.${system};
+        in
+        import ./nix/tests.nix {
+          inherit pkgs;
+          website = self.packages.${system}.website;
+          devShell = self.devShells.${system}.default;
+          websiteApp = self.apps.${system}.website.program;
         }
       );
     };
