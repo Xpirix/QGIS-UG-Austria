@@ -1,0 +1,213 @@
+{
+  "logo": {
+    "icon": "logo.svg",
+    "link": "/"
+  },
+  "navigation": [
+    {
+      "type": "menu",
+      "settings": {
+        "name": "About",
+        "children": [
+          {
+            "type": "link",
+            "settings": {
+              "name": "Features",
+              "href": "/project/overview",
+              "activeTest": "/project/overview"
+            }
+          },
+          {
+            "type": "link",
+            "settings": {
+              "name": "Screenshots and Maps",
+              "href": "/project/overview/#maps-showcase",
+              "activeTest": "/project/overview/#maps-showcase"
+            }
+          },
+          {
+            "type": "link",
+            "settings": {
+              "name": "Case Studies",
+              "href": "/project/case-studies",
+              "activeTest": "/project/case-studies"
+            }
+          },
+          {
+            "type": "link",
+            "settings": {
+              "name": "News and Blog",
+              "href": "https://blog.qgis.org"
+            }
+          },
+          {
+            "type": "link",
+            "settings": {
+              "name": "Past Releases (Changelog)",
+              "href": "/project/visual-changelogs",
+              "activeTest": "/project/visual-changelogs"
+            }
+          },
+          {
+            "type": "link",
+            "settings": {
+              "name": "Future Releases (Roadmap)",
+              "href": "/resources/roadmap",
+              "activeTest": "/resources/roadmap"
+            }
+          },
+          {
+            "type": "link",
+            "settings": {
+              "name": "Sustaining members",
+              "href": "/funding/membership/members",
+              "activeTest": "/funding/membership/members"
+            }
+          },
+          {
+            "type": "link",
+            "settings": {
+              "name": "Contact and Support",
+              "href": "/resources/support",
+              "activeTest": "/resources/support"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "menu",
+      "settings": {
+        "name": "Resources",
+        "children": [
+          {
+            "type": "link",
+            "settings": {
+              "name": "Documentation",
+              "href": "/resources/hub",
+              "activeTest": "/resources/hub"
+            }
+          },
+          {
+            "type": "link",
+            "settings": {
+              "name": "Resources Hub",
+              "href": "https://hub.qgis.org"
+            }
+          },
+          {
+            "type": "link",
+            "settings": {
+              "name": "Plugins",
+              "href": "https://plugins.qgis.org/"
+            }
+          },
+          {
+            "type": "link",
+            "settings": {
+              "name": "Books",
+              "href": "/resources/books",
+              "activeTest": "/resources/books"
+            }
+          },
+          {
+            "type": "link",
+            "settings": {
+              "name": "Certification Programme",
+              "href": "/community/certification",
+              "activeTest": "/community/certification"
+            }
+          },
+          {
+            "type": "link",
+            "settings": {
+              "name": "Visual Style Guide (Logos and Graphics)",
+              "href": "/styleguide",
+              "activeTest": "/styleguide"
+            }
+          },
+          {
+            "type": "link",
+            "settings": {
+              "name": "Compliance Reports",
+              "href": "/resources/reports/",
+              "activeTest": "/resources/reports/"
+            }
+          }
+          
+        ]
+      }
+    },
+    {
+      "type": "menu",
+      "settings": {
+        "name": "Community",
+        "children": [
+          {
+            "type": "link",
+            "settings": {
+              "name": "Get involved",
+              "href": "/community/involve",
+              "activeTest": "/community/involve"
+            }
+          },
+          {
+            "type": "link",
+            "settings": {
+              "name": "Meetings",
+              "href": "/community/organisation/meetings/",
+              "activeTest": "/community/organisation/meetings/"
+            }
+          },
+          {
+            "type": "link",
+            "settings": {
+              "name": "QGIS Foundation",
+              "href": "/community/foundation",
+              "activeTest": "/community/foundation"
+            }
+          },
+          {
+            "type": "link",
+            "settings": {
+              "name": "Project Organisation",
+              "href": "/community/organisation",
+              "activeTest": "/community/organisation"
+            }
+          },
+          {
+            "type": "link",
+            "settings": {
+              "name": "Local User Groups",
+              "href": "/community/groups",
+              "activeTest": "/community/groups"
+            }
+          },
+
+          {
+            "type": "link",
+            "settings": {
+              "name": "Contributors",
+              "href": "/community/contributors",
+              "activeTest": "/community/contributors"
+            }
+          },
+          {
+            "type": "link",
+            "settings": {
+              "name": "QGIS Metrics",
+              "href": "https://analytics.qgis.org"
+            }
+          },
+          {
+            "type": "link",
+            "settings": {
+              "name": "Members Blog",
+              "href": "https://planet.qgis.org/"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
