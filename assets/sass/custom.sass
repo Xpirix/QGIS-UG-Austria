@@ -129,3 +129,14 @@
 @media screen and (max-width: 1023px)
   .box
     padding: 1.25rem 1rem 1.25rem 0rem
+
+// Override: hero logo sizing.
+// qgis_at.png is now the 604x428 letterhead logo (extracted from the
+// official Beitrittserklaerung.pdf). Cap the display width so it renders
+// crisply on HiDPI screens instead of upscaling the old 151x107 stamp.
+.hero .logo
+  figure.image
+    img
+      width: auto
+      max-width: 280px
+      height: auto
