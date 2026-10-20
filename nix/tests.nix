@@ -57,38 +57,65 @@
         fi
       }
 
+      check_absent() {
+        local path="$1"
+        local unexpected="$2"
+        local description="$3"
+
+        if curl -s "http://127.0.0.1:$PORT$path" | grep -q "$unexpected"; then
+          echo "❌ $description (unexpectedly found: \"$unexpected\" at $path)"
+          FAILED=1
+        else
+          echo "✅ $description"
+        fi
+      }
+
       # Homepage
       check_status "/" "200" "Homepage returns HTTP 200"
-      check_content "/" "QGIS User Group Template" "Homepage has site title"
-      check_content "/" "Welcome to the QGIS User Group" "Homepage has welcome heading"
+      check_content "/" "QGIS Österreich" "Homepage has site title"
+      check_content "/" "Ein freies Geographisches Informationssystem" "Homepage has first section heading"
 
-      # Key section pages
+      # Published pages
+      # NOTE: /case-studies/, /community/, /tutorials/ and /rules/ are Hugo drafts
+      # and are not published (they return HTTP 404). Re-add checks for them here
+      # if/when those pages get published.
       check_status "/about-us/" "200" "About Us page returns HTTP 200"
-      check_content "/about-us/" "About Us" "About Us page has expected content"
+      check_content "/about-us/" "Der Verein" "About Us page has expected content"
 
-      check_status "/case-studies/" "200" "Case Studies page returns HTTP 200"
-      check_content "/case-studies/" "Case Studies" "Case Studies page has expected content"
+      check_status "/neuigkeiten/" "200" "Neuigkeiten page returns HTTP 200"
+      check_content "/neuigkeiten/" "Neuigkeiten" "Neuigkeiten page has expected content"
+
+      check_status "/arbeitsgruppen/" "200" "Arbeitsgruppen page returns HTTP 200"
+      check_content "/arbeitsgruppen/" "Arbeitsgruppen" "Arbeitsgruppen page has expected content"
+
+      check_status "/mitgliedschaft/" "200" "Mitgliedschaft page returns HTTP 200"
+      check_content "/mitgliedschaft/" "Mitglied werden" "Mitgliedschaft page has expected content"
 
       check_status "/events/" "200" "Events page returns HTTP 200"
-      check_content "/events/" "Events" "Events page has expected content"
-
-      check_status "/community/" "200" "Community page returns HTTP 200"
-      check_content "/community/" "Community" "Community page has expected content"
-
-      check_status "/tutorials/" "200" "Tutorials page returns HTTP 200"
-      check_content "/tutorials/" "Tutorials" "Tutorials page has expected content"
+      check_content "/events/" "Veranstaltungen" "Events page has expected content"
 
       check_status "/blog/" "200" "Blog page returns HTTP 200"
       check_content "/blog/" "Blog" "Blog page has expected content"
 
-      check_status "/rules/" "200" "Rules page returns HTTP 200"
-      check_content "/rules/" "Rules" "Rules page has expected content"
+      check_status "/datenschutzerklaerung/" "200" "Datenschutzerklärung page returns HTTP 200"
+      check_content "/datenschutzerklaerung/" "Datenschutzerklärung" "Datenschutzerklärung page has expected content"
 
       # Search index (JSON output enabled on home)
       check_status "/index.json" "200" "Search JSON index returns HTTP 200"
 
       # 404 handling
       check_status "/this-page-does-not-exist/" "404" "Non-existent path returns HTTP 404"
+
+      # Vendored navigation assets: the qg-top-nav component is vendored (no
+      # external CDN); see static/vendor/qgis-uni-navigation/README.md
+      check_status "/vendor/qgis-uni-navigation/index.js" "200" "Vendored qg-top-nav script is served"
+      check_status "/vendor/qgis-uni-navigation/nav-config.json" "200" "Vendored nav-config.json is served"
+      check_status "/vendor/qgis-uni-navigation/button-config.json" "200" "Vendored button-config.json is served"
+      check_status "/config/navigation.json" "200" "Site navigation.json is served"
+
+      # No external CDN references on the homepage
+      check_absent "/" "qgis.github.io/qgis-uni-navigation" "Homepage has no qgis.github.io CDN reference"
+      check_absent "/" "raw.githubusercontent.com" "Homepage has no raw.githubusercontent.com reference"
 
       kill $SERVER_PID 2>/dev/null
       wait $SERVER_PID 2>/dev/null || true
