@@ -70,6 +70,15 @@ test.describe("Published sub-pages", () => {
             "/download/Beitrittserklaerung.pdf",
         );
     });
+
+    test("/neuigkeiten/ links the LinkedIn company page", async ({ page }) => {
+        await page.goto("/neuigkeiten/");
+        // Same external href as in the home page Kontakt list.
+        const linkedIn = page.locator(
+            'a[href="https://www.linkedin.com/company/qgis-anwendergruppe-%C3%B6sterreich/"]',
+        );
+        await expect(linkedIn).toBeVisible();
+    });
 });
 
 test.describe("Draft pages are not published", () => {

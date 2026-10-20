@@ -42,6 +42,18 @@ test.describe("Home page", () => {
         );
     });
 
+    test("Kontakt links the LinkedIn company page", async ({ homePage }) => {
+        // The Kontakt list links the group's LinkedIn company page.
+        await expect(homePage.contactLinkedInLink).toBeVisible();
+        await expect(homePage.contactLinkedInLink).toHaveAttribute(
+            "href",
+            HomePage.expectedLinkedInHref,
+        );
+        await expect(homePage.contactLinkedInLink).toHaveText(
+            "QGIS Anwendergruppe Österreich",
+        );
+    });
+
     test("Footer", async ({ footer }) => {
         await expect(footer.banner).toBeVisible();
 

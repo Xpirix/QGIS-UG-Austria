@@ -10,10 +10,10 @@ sidebar: true
 
 # Neuigkeiten
 
-Aktuelle Neuigkeiten der QGIS Anwendergruppe Österreich finden Sie auf unserem
-X/Twitter-Kanal:
+Aktuelle Neuigkeiten der QGIS Anwendergruppe Österreich finden Sie auf unserer
+LinkedIn-Seite:
 
-- **X/Twitter:** [@QGISAT](https://twitter.com/QGISAT)
+- **LinkedIn:** [QGIS Anwendergruppe Österreich](https://www.linkedin.com/company/qgis-anwendergruppe-%C3%B6sterreich/)
 - **GitHub:** [github.com/QGIS-Austria](https://github.com/QGIS-Austria)
 
 Weitere Neuigkeiten aus der weltweiten QGIS-Gemeinschaft:

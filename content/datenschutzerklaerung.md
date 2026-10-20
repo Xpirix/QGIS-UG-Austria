@@ -58,8 +58,9 @@ Nachfolgend möchten wir Sie über den Umgang mit Ihren Daten gem. Art. 13 Daten
 
 QGIS Österreich Verein
 betreibt folgende Social Media Seiten:
-Twitter:
-Twitter QGIS Austria
+LinkedIn:
+QGIS Anwendergruppe Österreich
+<https://www.linkedin.com/company/qgis-anwendergruppe-%C3%B6sterreich/>
 Github:
 Github QGIS Austria
 Neben uns gibt es noch den Betreiber der Social Media Plattform an sich. Auch dieser ist insofern ein weiterer Verantwortlicher, der eine Datenverarbeitung durchführt, auf die wir jedoch nur begrenzten Einfluss haben. An den Stellen, an denen wir Einfluss nehmen und die Datenverarbeitung parametrisieren können, wirken wir im Rahmen der uns zur Verfügung stehenden Möglichkeiten auf den datenschutzgerechten Umgang durch den Betreiber der Social Media Plattform hin. An vielen Stellen können wir die Datenverarbeitung durch den Betreiber der Social Media Plattform aber nicht beeinflussen und wissen auch nicht genau, welche Daten dieser verarbeitet.
@@ -73,8 +74,6 @@ Wir nutzen die Social Media Plattformen für Werbezwecke. Dabei greifen wir auch
 ## Datenverarbeitung durch den Betreiber der Social Media Plattform
 
 Der Betreiber der Social Media Plattform setzt Webtrackingmethoden ein. Das Webtracking kann dabei auch unabhängig davon erfolgen, ob Sie bei der Social Media Plattform angemeldet oder registriert sind. Wie bereits dargestellt können wir auf die Webtrackingmethoden der Social Media Plattform leider kaum Einfluss nehmen. Wir können dieses z.B. nicht abschalten. Bitte seien Sie sich darüber bewusst: Es kann nicht ausgeschlossen werden, dass der Anbieter der Social Media Plattform Ihre Profil- und Verhaltensdatendaten nutzt, etwa um Ihre Gewohnheiten, persönlichen Beziehungen, Vorlieben usw. auszuwerten. Wir haben insofern keinen Einfluss auf die Verarbeitung Ihrer Daten durch den Anbieter der Social Media Plattform. Nähere Informationen zur Datenverarbeitung durch den Anbieter der Social Media Plattform und weitere Widerspruchsmöglichkeiten finden Sie in der Datenschutzerklärung des Anbieters:
-Twitter:
-<https://twitter.com/de/privacy>
 Facebook:
 <https://www.facebook.com/privacy/explanation>
 YouTube:
