@@ -38,15 +38,34 @@
         local path="$1"
         local expected="$2"
         local description="$3"
+        local body rc attempt ok=0
 
-        if curl $CURL_OPTS "http://127.0.0.1:$PORT$path" | grep -q "$expected"; then
+        # Download to a file with retries instead of piping curl into grep:
+        # on a heavily loaded nix builder (parallel derivations saturating
+        # CPU/IO) the piped response was occasionally truncated or empty,
+        # making this grep fail spuriously while the server logged HTTP 200.
+        # On real failure print curl exit code, body size and head so the
+        # cause is visible within nix's last-25-lines log tail.
+        body=$(mktemp)
+        for attempt in 1 2 3; do
+          rc=0
+          curl $CURL_OPTS -o "$body" "http://127.0.0.1:$PORT$path" || rc=$?
+          if [ "$rc" = "0" ] && grep -q "$expected" "$body"; then
+            ok=1
+            break
+          fi
+          sleep 1
+        done
+        if [ "$ok" = "1" ]; then
           echo "✅ $description"
         else
-          echo "❌ $description (expected to find: \"$expected\" at $path)"
+          echo "❌ $description (expected to find: \"$expected\" at $path; curl exit $rc after 3 attempts, body $(wc -c < "$body") bytes)"
+          echo "   body head: $(head -c 150 "$body" | tr '\n' ' ')"
           FAILED=1
           FAILED_CHECKS="$FAILED_CHECKS
             - $description"
         fi
+        rm -f "$body"
       }
 
       check_status() {
@@ -69,15 +88,34 @@
         local path="$1"
         local unexpected="$2"
         local description="$3"
+        local body rc attempt
 
-        if curl $CURL_OPTS "http://127.0.0.1:$PORT$path" | grep -q "$unexpected"; then
+        # Same download-with-retries approach as check_content; also fail if
+        # the body could not be fetched at all - grepping an empty/truncated
+        # response would let this guard pass vacuously (fail-open).
+        body=$(mktemp)
+        for attempt in 1 2 3; do
+          rc=0
+          curl $CURL_OPTS -o "$body" "http://127.0.0.1:$PORT$path" || rc=$?
+          if [ "$rc" = "0" ] && [ -s "$body" ]; then
+            break
+          fi
+          sleep 1
+        done
+        if grep -q "$unexpected" "$body"; then
           echo "❌ $description (unexpectedly found: \"$unexpected\" at $path)"
+          FAILED=1
+          FAILED_CHECKS="$FAILED_CHECKS
+            - $description"
+        elif [ "$rc" != "0" ] || [ ! -s "$body" ]; then
+          echo "❌ $description (could not fetch $path for inspection: curl exit $rc, body $(wc -c < "$body") bytes)"
           FAILED=1
           FAILED_CHECKS="$FAILED_CHECKS
             - $description"
         else
           echo "✅ $description"
         fi
+        rm -f "$body"
       }
 
       # Homepage
