@@ -9,6 +9,10 @@
     location-prefix="{{ $locationPrefix }}"
     logo-icon="{{ $logoIcon | absURL }}"
     logo-link="{{ .Site.BaseURL }}"
-    second-menu-prefix="https://qgis.github.io/QGIS-User-Group-Website/"
-    secondary-menu-config="https://raw.githubusercontent.com/qgis/QGIS-User-Group-Website/main/static/config/navigation.json"
+    {{/* The component concatenates second-menu-prefix + href (hrefs in
+        static/config/navigation.json start with '/'), hence TrimSuffix to
+        avoid double slashes. secondary-menu-config is the local Austrian
+        navigation.json, not the upstream template's. */}}
+    second-menu-prefix="{{ strings.TrimSuffix "/" .Site.BaseURL }}"
+    secondary-menu-config="{{ absURL "config/navigation.json" }}"
 ></qg-top-nav>

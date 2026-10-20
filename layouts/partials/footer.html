@@ -177,7 +177,7 @@
             class="columns is-desktop issue-report-link is-justify-content-center"
         >
             <a
-                href="https://github.com/qgis/QGIS-User-Group-Website/issues"
+                href="{{ .Site.Params.githubUrl }}issues"
                 class="column is-narrow p-0 is-size-6"
                 target="_blank"
                 >Problems with this website? Report an issue here 🐙</a
@@ -189,7 +189,7 @@
         <p>
             Commit revision:
             <a
-                href="https://github.com/qgis/QGIS-User-Group-Website/commit/{{ $commit }}"
+                href="{{ .Site.Params.githubRepo }}/commit/{{ $commit }}"
                 target="_blank"
                 >{{ $commit }}</a
             >

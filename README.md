@@ -167,8 +167,10 @@ Edit the `themes/qgis-website-theme/layouts/partials/menu.html` file to customiz
 
 - `logo-icon`: The logo on the main navigation menu (by default: QGIS logo)
 - `logo-link`: The link where the logo points to (by default: qgis.org). You can set it to `/` if you want to point the logo the homepage of your user group website.
-- `second-menu-prefix`: The link of this user group website (eg. https://sweden.qgis.org)
-- `secondary-menu-config`: The link to the `navigation.json` used for the mobile menu (See below). For example: https://raw.githubusercontent.com/qgis/QGIS-User-Group-Website/usergroup_switzerland/static/config/navigation.json
+- `second-menu-prefix`: The link of this user group website. It is set to this site's base URL (`{{ strings.TrimSuffix "/" .Site.BaseURL }}`), e.g. https://usergroup.qgis.org
+- `secondary-menu-config`: The link to the `navigation.json` used for the mobile menu (See below). It points at the local Austrian navigation config served from `static/config/navigation.json`, rendered via `{{ absURL "config/navigation.json" }}`
+
+The `qg-top-nav` navigation component itself is vendored under `static/vendor/qgis-uni-navigation/` and served from this site (no external CDN calls); see the `README.md` there for provenance and re-vendoring instructions.
 
 Edit the `static/config/navigation.json` file to customize the secondary menu on mobile. This file should be updated whenever you modify your menu entries.
 

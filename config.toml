@@ -82,21 +82,23 @@ fancy-font = "'Sevillana', cursive"
 
 ## Gh repo edit link
 ## This repo is used for the "Edit this page" link
-githubRepo = "https://github.com/qgis/QGIS-User-Group-Website/"
+## (no trailing slash - theme shortcodes append /edit/<branch>/<subdir>/<path>)
+githubRepo = "https://github.com/qgis/QGIS-UG-Austria"
 githubSubdir = "content"
 githubBranch = "main"
 
 ## Gh repo for site footer (include trailing slash)
-githubUrl = "https://github.com/qgis/QGIS-User-Group-Website/"
+githubUrl = "https://github.com/qgis/QGIS-UG-Austria/"
 ## GH Repo for filing a new issue
-githubIssueUrl = "https://github.com/qgis/QGIS-User-Group-Website/issues/new/choose"
+githubIssueUrl = "https://github.com/qgis/QGIS-UG-Austria/issues/new/choose"
 ### Edit content repo (set to automatically enter "edit" mode; this is good for "improve this page" links)
-githubEditUrl = "https://github.com/qgis/QGIS-User-Group-Website/edit/main"
+githubEditUrl = "https://github.com/qgis/QGIS-UG-Austria/edit/main"
 ### Radius for boxes
 corner-radius = "0px"
 
-## Url to navigation web component
-uniNavHeaderUrl = 'https://qgis.github.io/qgis-uni-navigation/index.js'
+## Navigation web component: vendored locally under
+## static/vendor/qgis-uni-navigation/ and wired in layouts/partials/header.html
+## (no external CDN calls). See the README.md there for provenance.
 uniNavHeaderLocationPrefix = "https://qgis.org"
 ## Logo shown in the top navigation (defaults to the Swiss user group image!)
 uniNavHeaderLogoIcon = 'img/qgis_at.png'

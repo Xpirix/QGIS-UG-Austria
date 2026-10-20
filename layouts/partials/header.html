@@ -173,10 +173,20 @@
         {{/* Search needs to be rendered as a template to ensure urls are correct */}}
         {{ $searchjs := resources.Get "js/search.js" | resources.ExecuteAsTemplate "search.js" . | resources.Minify | resources.Fingerprint }}
         <script defer src="{{ $searchjs.RelPermalink }}"></script>
+        {{/* The qg-top-nav navigation component is vendored locally (no external
+            CDN calls) - see static/vendor/qgis-uni-navigation/README.md.
+            The window.QG_UNI_NAV_* globals MUST be set before index.js executes,
+            because the lit property initializers capture them at construction.
+            printf+safeJS keeps Hugo from escaping '/' to '\/' in the literals. */}}
+        {{ $uniNavButtons := resources.Get "vendor/qgis-uni-navigation/button-config.json" | resources.ExecuteAsTemplate "vendor/qgis-uni-navigation/button-config.json" . }}
+        {{ $uniNavGlobals := printf "window.QG_UNI_NAV_BASE = %q;\n                window.QG_UNI_NAV_CONFIG_URL = %q;\n                window.QG_UNI_NAV_BUTTON_CONFIG_URL = %q;" (absURL "vendor/qgis-uni-navigation/") (absURL "vendor/qgis-uni-navigation/nav-config.json") $uniNavButtons.RelPermalink }}
+        <script>
+            {{ $uniNavGlobals | safeJS }}
+        </script>
         <script
             crossorigin=""
             type="application/javascript"
-            src="{{ .Site.Params.uniNavHeaderUrl }}"
+            src="{{ absURL "vendor/qgis-uni-navigation/index.js" }}"
         ></script>
     </head>
 
