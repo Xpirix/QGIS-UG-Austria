@@ -29,17 +29,23 @@
       done
 
       FAILED=0
+      # Collect failed check descriptions so the final summary (which is all
+      # nix prints on failure: last 25 log lines) names them explicitly.
+      FAILED_CHECKS=""
+      CURL_OPTS="-s --max-time 30 --retry 2 --retry-connrefused"
 
       check_content() {
         local path="$1"
         local expected="$2"
         local description="$3"
 
-        if curl -s "http://127.0.0.1:$PORT$path" | grep -q "$expected"; then
+        if curl $CURL_OPTS "http://127.0.0.1:$PORT$path" | grep -q "$expected"; then
           echo "✅ $description"
         else
           echo "❌ $description (expected to find: \"$expected\" at $path)"
           FAILED=1
+          FAILED_CHECKS="$FAILED_CHECKS
+            - $description"
         fi
       }
 
@@ -48,12 +54,14 @@
         local expected_code="$2"
         local description="$3"
 
-        actual=$(curl -s -o /dev/null -w "%{http_code}" "http://127.0.0.1:$PORT$path")
+        actual=$(curl $CURL_OPTS -o /dev/null -w "%{http_code}" "http://127.0.0.1:$PORT$path")
         if [ "$actual" = "$expected_code" ]; then
           echo "✅ $description (HTTP $actual)"
         else
           echo "❌ $description (expected HTTP $expected_code, got HTTP $actual)"
           FAILED=1
+          FAILED_CHECKS="$FAILED_CHECKS
+            - $description"
         fi
       }
 
@@ -62,9 +70,11 @@
         local unexpected="$2"
         local description="$3"
 
-        if curl -s "http://127.0.0.1:$PORT$path" | grep -q "$unexpected"; then
+        if curl $CURL_OPTS "http://127.0.0.1:$PORT$path" | grep -q "$unexpected"; then
           echo "❌ $description (unexpectedly found: \"$unexpected\" at $path)"
           FAILED=1
+          FAILED_CHECKS="$FAILED_CHECKS
+            - $description"
         else
           echo "✅ $description"
         fi
@@ -122,7 +132,7 @@
 
       if [ "$FAILED" = "1" ]; then
         echo ""
-        echo "❌ Smoke tests FAILED"
+        echo "❌ Smoke tests FAILED:$FAILED_CHECKS"
         exit 1
       fi
 
