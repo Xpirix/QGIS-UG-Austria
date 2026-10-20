@@ -31,6 +31,13 @@ export class HomePage {
 
     /** Kontakt section facts. */
     public readonly contactEmailLink: Locator;
+    /**
+     * LinkedIn company page link in the Kontakt list. External link -> the
+     * exact href string is the expectation; nothing is derived at runtime.
+     */
+    public readonly contactLinkedInLink: Locator;
+    public static readonly expectedLinkedInHref =
+        "https://www.linkedin.com/company/qgis-anwendergruppe-%C3%B6sterreich/";
     public static readonly expectedPhone = "+43 664 4852504";
     public static readonly expectedAddress =
         "QGIS Anwendergruppe Österreich, Unterlinden 16a, 6922 Wolfurt";
@@ -52,6 +59,9 @@ export class HomePage {
             name: "info@qgis.at",
             exact: true,
         });
+        this.contactLinkedInLink = this.page.locator(
+            `a[href="${HomePage.expectedLinkedInHref}"]`,
+        );
     }
 
     async goto() {

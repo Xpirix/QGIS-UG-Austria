@@ -112,6 +112,6 @@ eingeladen.
 - **Telefon:** +43 664 4852504
 - **Adresse:** QGIS Anwendergruppe Österreich, Unterlinden 16a, 6922 Wolfurt, Vorarlberg | Österreich
 - **GitHub:** [github.com/QGIS-Austria](https://github.com/QGIS-Austria)
-- **X/Twitter:** [@QGISAT](https://twitter.com/QGISAT)
+- **LinkedIn:** [QGIS Anwendergruppe Österreich](https://www.linkedin.com/company/qgis-anwendergruppe-%C3%B6sterreich/)
 
 {{< content-end >}}

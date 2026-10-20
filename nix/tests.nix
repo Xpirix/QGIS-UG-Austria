@@ -84,6 +84,7 @@
       check_status "/" "200" "Homepage returns HTTP 200"
       check_content "/" "QGIS Österreich" "Homepage has site title"
       check_content "/" "Ein freies Geographisches Informationssystem" "Homepage has first section heading"
+      check_content "/" "linkedin.com/company/qgis-anwendergruppe" "Homepage links the LinkedIn company page"
 
       # Published pages
       # NOTE: /case-studies/, /community/, /tutorials/ and /rules/ are Hugo drafts

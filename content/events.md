@@ -71,7 +71,7 @@ Lerninhalte zu Themen wie:
 - Kartographie und Visualisierung
 
 Schauen Sie regelmäßig vorbei – neue Workshop-Ankündigungen erscheinen hier und
-auf unserem [X/Twitter-Kanal](https://twitter.com/QGISAT).
+auf unserer [LinkedIn-Seite](https://www.linkedin.com/company/qgis-anwendergruppe-%C3%B6sterreich/).
 
 {{< rich-content-end >}}
 {{< rich-box-end >}}
