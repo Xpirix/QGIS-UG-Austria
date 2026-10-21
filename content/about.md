@@ -56,7 +56,7 @@ Die formalen Einheiten der QGIS Usergruppe sind:
 - Die Rechnungsprüfer\*innen
 
 Statuten der QGIS Anwendergruppe Österreich:
-[Statuten (PDF)](/download/Statuten_AUT_qgis.pdf)
+[Statuten (PDF)](../download/Statuten_AUT_qgis.pdf)
 
 ### Der Vorstand
 

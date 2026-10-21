@@ -1,18 +1,24 @@
 {{ $isLocal := (or (eq .Site.BaseURL "/") (strings.Contains .Site.BaseURL "localhost")) }}
 {{ $locationPrefix := .Site.Params.uniNavHeaderLocationPrefix }}
 {{ $logoIcon := .Site.Params.uniNavHeaderLogoIcon | default "https://qgis.org/funders/qgis-usergroup-switzerland.png" }}
-
+{{/* Path component of the baseURL ('/QGIS-UG-Austria' on GitHub Pages,
+    '' at a domain root). All internal URLs below are root-relative
+    INCLUDING this base path, so the site works under any origin. */}}
+{{ $basePath := (urls.Parse .Site.BaseURL).Path | default "/" }}
 
 <qg-top-nav
     breakpoint="1024"
     class="is-highest navbar is-fixed-top"
     location-prefix="{{ $locationPrefix }}"
-    logo-icon="{{ $logoIcon | absURL }}"
-    logo-link="{{ .Site.BaseURL }}"
-    {{/* The component concatenates second-menu-prefix + href (hrefs in
-        static/config/navigation.json start with '/'), hence TrimSuffix to
-        avoid double slashes. secondary-menu-config is the local Austrian
-        navigation.json, not the upstream template's. */}}
-    second-menu-prefix="{{ strings.TrimSuffix "/" .Site.BaseURL }}"
-    secondary-menu-config="{{ absURL "config/navigation.json" }}"
+    logo-icon="{{ $logoIcon | relURL }}"
+    logo-link="{{ $basePath }}"
+    {{/* The component concatenates second-menu-prefix + href as plain strings
+        (hrefs in static/config/navigation.json start with '/'), so the prefix
+        must be the base PATH only — not the full baseURL — to keep the links
+        root-relative and avoid escaping the origin. TrimSuffix avoids double
+        slashes; '' at a domain root, '/QGIS-UG-Austria' on GitHub Pages.
+        secondary-menu-config is the local Austrian navigation.json, not the
+        upstream template's. */}}
+    second-menu-prefix="{{ strings.TrimSuffix "/" $basePath }}"
+    secondary-menu-config="{{ "config/navigation.json" | relURL }}"
 ></qg-top-nav>

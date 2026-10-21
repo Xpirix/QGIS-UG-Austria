@@ -5,7 +5,7 @@
 
                 <div class="navbar-item">
                     <div id="search-control" class="control has-icons-right search-control is-hidden-desktop">
-                        <form action="{{ "search/" | absURL }}" method="GET">
+                        <form action="{{ "search/" | relURL }}" method="GET">
                             <input
                                 class="input is-small"
                                 type="search"
@@ -24,7 +24,7 @@
                 <div class="navbar-start">
                     {{- range site.Menus.main }}
                         <a
-                            href="{{ .URL | absURL }}"
+                            href="{{ .URL }}"
                             class="navbar-item has-text-weight-semibold is-size-7"
                         >
                             {{ .Name }}
@@ -34,7 +34,7 @@
                 <div class="navbar-end is-hidden-mobile is-hidden-tablet-only">
                     <div class="navbar-item">
                         <div id="search-control" class="control has-icons-right search-control">
-                            <form action="{{ "search/" | absURL }}" method="GET">
+                            <form action="{{ "search/" | relURL }}" method="GET">
                                 <input
                                     class="input is-small"
                                     type="search"

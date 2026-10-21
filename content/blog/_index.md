@@ -20,7 +20,7 @@ und Fortgeschrittene.
 Noch ist dieser Bereich im Aufbau. Aktuelle Neuigkeiten finden Sie in der
 Zwischenzeit hier:
 
-- [Neuigkeiten](/neuigkeiten/) – unsere [LinkedIn-Seite](https://www.linkedin.com/company/qgis-anwendergruppe-%C3%B6sterreich/) und weitere Links
+- [Neuigkeiten]({{% relref "/neuigkeiten.md" %}}) – unsere [LinkedIn-Seite](https://www.linkedin.com/company/qgis-anwendergruppe-%C3%B6sterreich/) und weitere Links
 - [QGIS Projekt-Blog](https://blog.qgis.org/) – Neuigkeiten aus der weltweiten QGIS-Gemeinschaft
 - [Members Blogs (Planet QGIS)](https://plugins.qgis.org/planet/) – Blogbeiträge von QGIS-Anwendergruppen und Firmen
 

@@ -30,7 +30,7 @@ Wo: [Ort / Online]
 
 {{< rich-content-end >}}
 {{< rich-right-start >}}
-![](/img/oldsite/workshops.jpg)
+![](../img/oldsite/workshops.jpg)
 {{< rich-right-end >}}
 {{< rich-box-end >}}
 

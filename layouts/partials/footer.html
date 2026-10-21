@@ -3,7 +3,7 @@
         <div class="columns is-desktop">
             <div class="column is-2-desktop">
                 <figure class="image is-128x128">
-                    <img alt="Logo" src="{{ absURL "img/footlogo.svg" }}" />
+                    <img alt="Logo" src="{{ relURL "img/footlogo.svg" }}" />
                 </figure>
             </div>
             <div class="column mb-6">
@@ -177,7 +177,7 @@
             class="columns is-desktop issue-report-link is-justify-content-center"
         >
             <a
-                href="{{ .Site.Params.githubUrl }}issues"
+                href="{{ site.Params.githubUrl }}issues"
                 class="column is-narrow p-0 is-size-6"
                 target="_blank"
                 >Problems with this website? Report an issue here 🐙</a
@@ -185,11 +185,11 @@
         </div>
     </div>
     <div class="commit-link is-size-7">
-        {{ $commit := readFile (print .Site.Params.commitFile) }}
+        {{ $commit := readFile (print site.Params.commitFile) }}
         <p>
             Commit revision:
             <a
-                href="{{ .Site.Params.githubRepo }}/commit/{{ $commit }}"
+                href="{{ site.Params.githubRepo }}/commit/{{ $commit }}"
                 target="_blank"
                 >{{ $commit }}</a
             >

@@ -75,7 +75,7 @@ QGIS-Anwender\*innen, um der Allgemeinheit einen Zugang zur Verarbeitung räumli
 Daten durch die Verbreitung des freien Geographischen Informationssystems QGIS – im
 Sinne von Freier Software für Geoinformationssysteme – zu ermöglichen.
 
-[Mehr über den Verein erfahren](/about-us/)
+[Mehr über den Verein erfahren]({{% relref "/about.md" %}})
 
 {{< rich-content-end >}}
 {{< rich-box-end >}}
@@ -98,7 +98,7 @@ von GIS-Schulung und Ausbildung über hydrologische und hydraulische Modellierun
 hin zu Webclienten und Webanwendungen. Wer Interesse hat mitzuarbeiten, ist herzlich
 eingeladen.
 
-[Zu den Arbeitsgruppen](/arbeitsgruppen/)
+[Zu den Arbeitsgruppen]({{% relref "/arbeitsgruppen.md" %}})
 
 {{< rich-content-end >}}
 {{< rich-box-end >}}

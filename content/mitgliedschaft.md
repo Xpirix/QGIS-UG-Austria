@@ -11,7 +11,7 @@ sidebar: true
 # Mitglied werden
 
 Bitte senden Sie uns die ausgefüllte
-[Beitrittserklärung (PDF)](/download/Beitrittserklaerung.pdf) per Brief oder per
+[Beitrittserklärung (PDF)](../download/Beitrittserklaerung.pdf) per Brief oder per
 E-Mail an [info@qgis.at](mailto:info@qgis.at) zu.
 
 ## Kontakt

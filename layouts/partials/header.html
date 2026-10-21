@@ -6,21 +6,21 @@
         <link
             rel="apple-touch-icon"
             sizes="180x180"
-            href="{{ absURL "img/favicon/apple-touch-icon.png" }}"
+            href="{{ relURL "img/favicon/apple-touch-icon.png" }}"
         />
         <link
             rel="icon"
             type="image/png"
             sizes="32x32"
-            href="{{ absURL "img/favicon/favicon-32x32.png" }}"
+            href="{{ relURL "img/favicon/favicon-32x32.png" }}"
         />
         <link
             rel="icon"
             type="image/png"
             sizes="16x16"
-            href="{{ absURL "img/favicon/favicon-16x16.png" }}"
+            href="{{ relURL "img/favicon/favicon-16x16.png" }}"
         />
-        <link rel="manifest" href="{{ absURL "site.webmanifest" }}" />
+        <link rel="manifest" href="{{ relURL "site.webmanifest" }}" />
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>{{ .Title }} &middot; {{ .Site.Title }}</title>
@@ -68,7 +68,7 @@
             {{ end }}
             "
         />
-        <meta property="og:image" content="{{ if .Params.og_image }}{{ absURL .Params.og_image }} {{ else }}{{ absURL "/img/QGIScover.png"}}{{ end }}"/>
+        <meta property="og:image" content="{{ if .Params.og_image }}{{ absURL (strings.TrimPrefix "/" .Params.og_image) }}{{ else }}{{ absURL "img/QGIScover.png"}}{{ end }}"/>
 
         {{/* must have the leading slash in css path or gh pages deploy will break */}}
         {{/* We render bulma to css for sass compilation but via a template so that we can include
@@ -179,14 +179,14 @@
             because the lit property initializers capture them at construction.
             printf+safeJS keeps Hugo from escaping '/' to '\/' in the literals. */}}
         {{ $uniNavButtons := resources.Get "vendor/qgis-uni-navigation/button-config.json" | resources.ExecuteAsTemplate "vendor/qgis-uni-navigation/button-config.json" . }}
-        {{ $uniNavGlobals := printf "window.QG_UNI_NAV_BASE = %q;\n                window.QG_UNI_NAV_CONFIG_URL = %q;\n                window.QG_UNI_NAV_BUTTON_CONFIG_URL = %q;" (absURL "vendor/qgis-uni-navigation/") (absURL "vendor/qgis-uni-navigation/nav-config.json") $uniNavButtons.RelPermalink }}
+        {{ $uniNavGlobals := printf "window.QG_UNI_NAV_BASE = %q;\n                window.QG_UNI_NAV_CONFIG_URL = %q;\n                window.QG_UNI_NAV_BUTTON_CONFIG_URL = %q;" (relURL "vendor/qgis-uni-navigation/") (relURL "vendor/qgis-uni-navigation/nav-config.json") $uniNavButtons.RelPermalink }}
         <script>
             {{ $uniNavGlobals | safeJS }}
         </script>
         <script
             crossorigin=""
             type="application/javascript"
-            src="{{ absURL "vendor/qgis-uni-navigation/index.js" }}"
+            src="{{ relURL "vendor/qgis-uni-navigation/index.js" }}"
         ></script>
     </head>
 

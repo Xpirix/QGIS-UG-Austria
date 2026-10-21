@@ -17,7 +17,7 @@
             <div class="has-child">
                 {{/* LEVEL 1 */}}
                 {{ partial "link" . }}
-                <span onclick="toggleSubMenu('{{ $menuItemID }}')" class="drop-arrow"><img src="{{ "img/arrow.svg" | absURL }}"/></span>
+                <span onclick="toggleSubMenu('{{ $menuItemID }}')" class="drop-arrow"><img src="{{ "img/arrow.svg" | relURL }}"/></span>
             </div>
             <ul id="{{ $menuItemID }}" class="collapsed">
                 {{ range sort .Children "Weight" }}
@@ -29,7 +29,7 @@
                         <div class="has-child">
                             {{/* LEVEL 2 */}}
                             {{ partial "link" . }}
-                            <span onclick="toggleSubMenu('{{ $menuItemID }}')" class="drop-arrow"><img src="{{ "img/arrow.svg" | absURL }}"/></span>
+                            <span onclick="toggleSubMenu('{{ $menuItemID }}')" class="drop-arrow"><img src="{{ "img/arrow.svg" | relURL }}"/></span>
                         </div>
                         <ul id="{{ $menuItemID }}" class="collapsed">
                             {{ range sort .Children "Weight" }}
@@ -41,7 +41,7 @@
                                     <div class="has-child">
                                         {{/* LEVEL 3 */}}
                                         {{ partial "link" . }}
-                                        <span onclick="toggleSubMenu('{{ $menuItemID }}')" class="drop-arrow"><img src="{{ "img/arrow.svg" | absURL }}"/></span>
+                                        <span onclick="toggleSubMenu('{{ $menuItemID }}')" class="drop-arrow"><img src="{{ "img/arrow.svg" | relURL }}"/></span>
                                     </div>
                                     <ul id="{{ $menuItemID }}" class="collapsed">
                                         {{ range sort .Children "Weight" }}
