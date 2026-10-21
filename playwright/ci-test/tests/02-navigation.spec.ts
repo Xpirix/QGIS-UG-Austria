@@ -75,22 +75,33 @@ test.describe("Navigation", () => {
     test("Top nav: Austrian secondary menu 'QGIS Österreich'", async ({
         header,
     }) => {
-        // All eight items visible with correct baseURL-derived hrefs
+        // All eight items visible; hrefs are root-relative (the component
+        // concatenates second-menu-prefix + href at runtime, and the prefix is
+        // now the baseURL PATH only), so assert the resolved absolute URL via
+        // the element's .href JS property against the current origin.
         for (const [name, path] of header.austriaMenu) {
             const link = header.austriaMenuLink(name);
             await expect(link, `secondary menu item "${name}" missing`).toBeVisible();
-            await expect(link).toHaveAttribute("href", `${header.origin}${path}`);
+            await expect(link).toHaveJSProperty(
+                "href",
+                `${header.origin}${path}`,
+            );
         }
     });
 
     test("Site navbar (#context): German menu + search", async ({ navbar }) => {
         await expect(navbar.root).toBeVisible();
 
-        // All eight German menu links visible with correct hrefs
+        // All eight German menu links visible; hrefs are root-relative
+        // (raw menu .URL, which Hugo auto-prefixes with the base path), so
+        // assert the resolved absolute URL via the element's .href property.
         for (const [name, path] of navbar.menu) {
             const link = navbar.menuLink(name);
             await expect(link, `navbar item "${name}" missing`).toBeVisible();
-            await expect(link).toHaveAttribute("href", `${navbar.origin}${path}`);
+            await expect(link).toHaveJSProperty(
+                "href",
+                `${navbar.origin}${path}`,
+            );
         }
 
         // Exactly one visible searchbox, empty

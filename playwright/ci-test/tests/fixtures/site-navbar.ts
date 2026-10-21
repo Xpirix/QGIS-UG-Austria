@@ -15,7 +15,8 @@ export class SiteNavbar {
 
     /**
      * The eight German menu entries as [accessible name, site path] pairs.
-     * The rendered hrefs are absolute (baseURL origin + path).
+     * The rendered hrefs are root-relative (base path + site path); specs
+     * assert the resolved absolute URL via the element's .href property.
      */
     public readonly menu: [string, string][] = [
         ["Home", "/"],

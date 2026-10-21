@@ -10,7 +10,8 @@ import type { Page, Locator } from "@playwright/test";
  *    dropdowns (open on hover) plus Download / Donate / Goodies link buttons
  *    (each rendered twice: desktop bar + mobile drawer, hence .first()),
  *  - the Austrian secondary menu labelled "QGIS Österreich" with the eight
- *    German site links (hrefs are absolute, built from the site baseURL).
+ *    German site links (hrefs are root-relative: second-menu-prefix carries
+ *    the baseURL path and navigation.json hrefs start with '/').
  *
  * NOTE: two elements on the page expose role=navigation with the accessible
  * name "main navigation" — the shadow-DOM <nav> inside <qg-top-nav> and the
@@ -65,7 +66,8 @@ export class Header {
 
     /**
      * The Austrian secondary menu: [accessible name, site path] pairs.
-     * Hrefs in the DOM are absolute (baseURL + path).
+     * Hrefs in the DOM are root-relative (base path + site path); specs
+     * assert the resolved absolute URL via the element's .href property.
      */
     public readonly austriaMenu: [string, string][] = [
         ["Home", "/"],

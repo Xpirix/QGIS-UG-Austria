@@ -6,7 +6,7 @@
         "name": "Download",
         "href": "/download",
         "class": "basic",
-        "icon": "{{ absURL "vendor/qgis-uni-navigation/download.svg" }}",
+        "icon": "{{ relURL "vendor/qgis-uni-navigation/download.svg" }}",
         "activeTest": "/download"
       }
     },
@@ -16,7 +16,7 @@
         "name": "Donate",
         "href": "/funding/donate",
         "class": "primary",
-        "icon": "{{ absURL "vendor/qgis-uni-navigation/donate.svg" }}",
+        "icon": "{{ relURL "vendor/qgis-uni-navigation/donate.svg" }}",
         "activeTest": "/funding/donate"
       }
     },
@@ -26,7 +26,7 @@
         "name": "Goodies",
         "href": "/goodies",
         "class": "basic icon-button",
-        "icon": "{{ absURL "vendor/qgis-uni-navigation/goodies.svg" }}",
+        "icon": "{{ relURL "vendor/qgis-uni-navigation/goodies.svg" }}",
         "activeTest": "/goodies"
       }
     }

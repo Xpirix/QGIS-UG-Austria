@@ -65,10 +65,16 @@ test.describe("Published sub-pages", () => {
         await page.goto("/mitgliedschaft/");
         const pdf = page.locator('a[href$="Beitrittserklaerung.pdf"]').first();
         await expect(pdf).toBeVisible();
-        await expect(pdf).toHaveAttribute(
-            "href",
-            "/download/Beitrittserklaerung.pdf",
+        // The href is parent-relative ("../download/Beitrittserklaerung.pdf")
+        // so it resolves under any origin/base path; assert the resolved
+        // absolute URL (element .href property) ends in the expected path.
+        const resolvedHref: string = await pdf.evaluate(
+            (el) => (el as HTMLAnchorElement).href,
         );
+        expect(
+            resolvedHref.endsWith("/download/Beitrittserklaerung.pdf"),
+            `resolved PDF href was ${resolvedHref}`,
+        ).toBe(true);
     });
 
     test("/neuigkeiten/ links the LinkedIn company page", async ({ page }) => {

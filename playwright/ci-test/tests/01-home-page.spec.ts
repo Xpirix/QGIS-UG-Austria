@@ -17,7 +17,9 @@ test.describe("Home page", () => {
             HomePage.expectedSubtitle,
         );
         await expect(homePage.heroButton).toBeVisible();
-        await expect(homePage.heroButton).toHaveAttribute(
+        // href is root-relative (base path + /mitgliedschaft/); assert the
+        // resolved absolute URL via the element's .href property.
+        await expect(homePage.heroButton).toHaveJSProperty(
             "href",
             `${homePage.origin}/mitgliedschaft/`,
         );

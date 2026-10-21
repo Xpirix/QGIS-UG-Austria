@@ -4,7 +4,7 @@
     <section
         class="hero is-primary1 {{ $size }} has-bg-img {{ if .Params.HeroIsUserConference }}user-conference{{ end }}"
         {{ if ( .Params.HeroImage ) }}
-            style="background: url('{{ absURL .Params.HeroImage | safeCSS }}');
+            style="background: url('{{ relURL .Params.HeroImage | safeCSS }}');
             background-position: center; background-size: cover;"
         {{ end }}
     >
@@ -15,7 +15,7 @@
                     <div class="hero-container">
                         {{ if .Params.AdditionalLogo }}
                             <figure class="image">
-                                <img src="{{ absURL .Params.AdditionalLogo | safeCSS }}" />
+                                <img src="{{ relURL .Params.AdditionalLogo | safeCSS }}" />
                             </figure>
                         {{ end }}
                         {{ if .Params.LabelText }}
@@ -37,7 +37,13 @@
                         {{ if .Params.ButtonText }}
                             <a
                                 class="button is-primary1 is-size-5"
-                                href="{{ .Params.ButtonLink | absURL }}"
+                                {{/* relURL anchors a leading-slash input at the DOMAIN
+                                    root (losing the base path), and path.Join would
+                                    clean away the trailing slash — so concatenate the
+                                    baseURL's path with the link, mirroring how
+                                    qg-top-nav's second-menu-prefix works ('' at a
+                                    domain root, '/QGIS-UG-Austria' on GitHub Pages). */}}
+                                href="{{ strings.TrimSuffix "/" ((urls.Parse .Site.BaseURL).Path) }}{{ .Params.ButtonLink }}"
                             >
                                 {{ .Params.ButtonText }}
                             </a>
@@ -54,7 +60,7 @@
                     class="logo column is-flex is-justify-content-center is-hidden-mobile"
                 >
                     <figure class="image">
-                        <img src="{{ absURL .Params.HeroLogo | safeCSS }}" />
+                        <img src="{{ relURL .Params.HeroLogo | safeCSS }}" />
                     </figure>
                 </div>
             {{ end }}
