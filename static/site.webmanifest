@@ -1,6 +1,8 @@
 {
-    "name": "",
-    "short_name": "",
+    "name": "QGIS Österreich",
+    "short_name": "QGIS AT",
+    "lang": "de-AT",
+    "description": "Website der QGIS Anwendergruppe Österreich",
     "icons": [
         {
             "src": "img/favicon/android-chrome-192x192.png",
