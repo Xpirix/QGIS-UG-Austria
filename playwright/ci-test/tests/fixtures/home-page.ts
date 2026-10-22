@@ -65,7 +65,12 @@ export class HomePage {
     }
 
     async goto() {
-        await this.page.goto(this.url);
+        // waitUntil "domcontentloaded", NOT the default "load": the window
+        // load event waits for the runtime-injected analytics script
+        // (matomo.qgis.org). When that host is slow or unreachable the load
+        // event never fires and every navigation times out, even though the
+        // page content is fully rendered. All assertions here are DOM-based.
+        await this.page.goto(this.url, { waitUntil: "domcontentloaded" });
     }
 
     /** An h2 section heading by (substring) accessible name. */

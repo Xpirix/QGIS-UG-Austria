@@ -28,8 +28,16 @@ for (const path of pagesToCheck) {
         // Attach the listener BEFORE navigation so no request escapes.
         page.on("request", (request) => requested.push(request.url()));
 
-        await page.goto(path);
-        await page.waitForLoadState("load");
+        // domcontentloaded, NOT "load": the load event waits for the
+        // runtime-injected analytics script. If that external host hangs,
+        // "load" never fires — but requests are recorded at ISSUANCE time,
+        // so this guard loses no coverage by not waiting for load.
+        await page.goto(path, { waitUntil: "domcontentloaded" });
+        // Best-effort: let the load event finish quickly when external hosts
+        // are reachable; never hang the guard when they are not.
+        await page
+            .waitForLoadState("load", { timeout: 5000 })
+            .catch(() => undefined);
         // Give runtime-injected scripts (e.g. the analytics tracker) time to
         // fire their requests, so the guard cannot pass vacuously.
         await page.waitForTimeout(2000);

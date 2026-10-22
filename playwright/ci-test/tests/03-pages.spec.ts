@@ -48,7 +48,10 @@ const draftPages = ["/case-studies/", "/community/", "/tutorials/", "/rules/"];
 test.describe("Published sub-pages", () => {
     for (const p of publishedPages) {
         test(`${p.path} renders with heading and title`, async ({ page }) => {
-            const response = await page.goto(p.path);
+            // domcontentloaded: never block on external analytics reachability
+            const response = await page.goto(p.path, {
+                waitUntil: "domcontentloaded",
+            });
             expect(response?.status(), `${p.path} did not return 200`).toBe(200);
             await expect(page).toHaveTitle(p.titleRe);
             // .first(): /blog/ exposes two level-1 "Blog" headings (list page
@@ -62,7 +65,9 @@ test.describe("Published sub-pages", () => {
     test("/mitgliedschaft/ links to the membership form PDF", async ({
         page,
     }) => {
-        await page.goto("/mitgliedschaft/");
+        await page.goto("/mitgliedschaft/", {
+            waitUntil: "domcontentloaded",
+        });
         const pdf = page.locator('a[href$="Beitrittserklaerung.pdf"]').first();
         await expect(pdf).toBeVisible();
         // The href is parent-relative ("../download/Beitrittserklaerung.pdf")
@@ -78,7 +83,7 @@ test.describe("Published sub-pages", () => {
     });
 
     test("/neuigkeiten/ links the LinkedIn company page", async ({ page }) => {
-        await page.goto("/neuigkeiten/");
+        await page.goto("/neuigkeiten/", { waitUntil: "domcontentloaded" });
         // Same external href as in the home page Kontakt list.
         const linkedIn = page.locator(
             'a[href="https://www.linkedin.com/company/qgis-anwendergruppe-%C3%B6sterreich/"]',
@@ -90,7 +95,9 @@ test.describe("Published sub-pages", () => {
 test.describe("Draft pages are not published", () => {
     for (const path of draftPages) {
         test(`${path} returns 404`, async ({ page }) => {
-            const response = await page.goto(path);
+            const response = await page.goto(path, {
+                waitUntil: "domcontentloaded",
+            });
             expect(response, `${path}: no response received`).not.toBeNull();
             expect(
                 response!.status(),
