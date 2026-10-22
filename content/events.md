@@ -37,7 +37,7 @@ knüpfen und Erfahrungen aus Forschung, Verwaltung und Praxis zu teilen.
 
 {{< rich-content-end >}}
 {{< rich-right-start >}}
-![](../img/oldsite/workshops.jpg)
+![QGIS-Anwendertreffen in Traunkirchen](../img/events/traunkirchen-anwendertreffen.jpg)
 {{< rich-right-end >}}
 {{< rich-box-end >}}
 
