@@ -59,9 +59,14 @@ export class HomePage {
             name: "info@qgis.at",
             exact: true,
         });
-        this.contactLinkedInLink = this.page.locator(
-            `a[href="${HomePage.expectedLinkedInHref}"]`,
-        );
+        // Located by accessible name, NOT by bare href: the footer social row
+        // now contains the same LinkedIn href (icon link with EMPTY accessible
+        // name), so an href-only locator would resolve to 2 elements and trip
+        // Playwright strict mode.
+        this.contactLinkedInLink = this.page.getByRole("link", {
+            name: "QGIS Anwendergruppe Österreich",
+            exact: true,
+        });
     }
 
     async goto() {

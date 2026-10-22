@@ -119,10 +119,9 @@ test.describe("Home page", () => {
         // Branding
         await expect(footer.logoImage).toBeVisible();
 
-        // Social links are icon-only (empty accessible names) -> by href
-        await expect(footer.facebookLink).toBeVisible();
-        await expect(footer.youtubeLink).toBeVisible();
-        await expect(footer.mastodonLink).toBeVisible();
+        // Social links are icon-only (empty accessible names) -> by href.
+        // These are the GROUP's own channels now.
+        await expect(footer.linkedInLink).toBeVisible();
         await expect(footer.ghLink).toBeVisible();
         await expect(footer.mailLink).toBeVisible();
 

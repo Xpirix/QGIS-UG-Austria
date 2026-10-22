@@ -84,11 +84,19 @@ test.describe("Published sub-pages", () => {
 
     test("/neuigkeiten/ links the LinkedIn company page", async ({ page }) => {
         await page.goto("/neuigkeiten/", { waitUntil: "domcontentloaded" });
-        // Same external href as in the home page Kontakt list.
-        const linkedIn = page.locator(
-            'a[href="https://www.linkedin.com/company/qgis-anwendergruppe-%C3%B6sterreich/"]',
-        );
+        // Same external href as in the home page Kontakt list. Located by
+        // accessible name: the footer (present on every page) now carries the
+        // same href as an icon-only link, so a bare href locator would match
+        // 2 elements and fail strict mode.
+        const linkedIn = page.getByRole("link", {
+            name: "QGIS Anwendergruppe Österreich",
+            exact: true,
+        });
         await expect(linkedIn).toBeVisible();
+        await expect(linkedIn).toHaveAttribute(
+            "href",
+            "https://www.linkedin.com/company/qgis-anwendergruppe-%C3%B6sterreich/",
+        );
     });
 });
 
