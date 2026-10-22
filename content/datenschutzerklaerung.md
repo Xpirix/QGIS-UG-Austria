@@ -91,7 +91,7 @@ Ihnen stehen bezüglich Ihrer bei uns gespeicherten Daten grundsätzlich die Rec
 QGIS Anwendergruppe Österreich
 Adresse : Unterlinden 16a
 A - 6922 | Wolfurt
-Mobile : +43 664 4852504
+Mobile : +43 660 4064306
 E-mail : info@qgis.at
 
 {{< content-end >}}

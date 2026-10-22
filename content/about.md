@@ -86,7 +86,7 @@ Entscheidungen der QGIS.ORG Vereinigung involviert.
 ## Kontakt
 
 - **E-Mail:** [info@qgis.at](mailto:info@qgis.at)
-- **Telefon:** +43 664 4852504
+- **Telefon:** +43 660 4064306
 - **Web:** [www.qgis.at](https://www.qgis.at)
 - **GitHub:** [github.com/QGIS-Austria](https://github.com/QGIS-Austria)
 

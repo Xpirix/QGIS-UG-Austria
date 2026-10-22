@@ -109,7 +109,7 @@ eingeladen.
 ## Kontakt
 
 - **E-Mail:** [info@qgis.at](mailto:info@qgis.at)
-- **Telefon:** +43 664 4852504
+- **Telefon:** +43 660 4064306
 - **Adresse:** QGIS Anwendergruppe Österreich, Unterlinden 16a, 6922 Wolfurt, Vorarlberg | Österreich
 - **GitHub:** [github.com/QGIS-Austria](https://github.com/QGIS-Austria)
 - **LinkedIn:** [QGIS Anwendergruppe Österreich](https://www.linkedin.com/company/qgis-anwendergruppe-%C3%B6sterreich/)
