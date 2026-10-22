@@ -74,10 +74,6 @@ Bei unseren Treffen können Mitglieder:
 - Hilfe bei QGIS-Fragen erhalten
 - sich mit anderen Anwender\*innen vernetzen
 
-**Wann:** [Zeitplan ergänzen]  
-**Wo:** [Ort / Online-Plattform ergänzen]  
-**Anmeldung:** [Hinweise zur Anmeldung ergänzen]
-
 {{< rich-content-end >}}
 {{< rich-box-end >}}
 {{< column-end >}}
