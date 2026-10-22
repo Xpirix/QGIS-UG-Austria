@@ -9,7 +9,7 @@ import type { Page, Locator } from "@playwright/test";
  * repeats names like "Blog", "Local User Groups" or "Goodies". Scoping plus
  * exact name matching keeps all locators strict-mode safe.
  *
- * The five social links are icon-only with EMPTY accessible names, so they
+ * The three social links are icon-only with EMPTY accessible names, so they
  * are located by their href attribute instead of by role name.
  */
 export class Footer {
@@ -65,9 +65,7 @@ export class Footer {
 
     // Branding + social (icon-only, empty accessible names -> located by href)
     public readonly logoImage: Locator;
-    public readonly facebookLink: Locator;
-    public readonly youtubeLink: Locator;
-    public readonly mastodonLink: Locator;
+    public readonly linkedInLink: Locator;
     public readonly ghLink: Locator;
     public readonly mailLink: Locator;
 
@@ -126,15 +124,12 @@ export class Footer {
         this.logoImage = this.banner.getByRole("img", { name: "Logo" });
 
         // Icon-only social links: empty accessible names, so match on href.
-        this.facebookLink = this.socialLink(
-            "https://www.facebook.com/profile.php?id=100057434859831",
+        // These are the GROUP's own channels (not the QGIS project's).
+        this.linkedInLink = this.socialLink(
+            "https://www.linkedin.com/company/qgis-anwendergruppe-%C3%B6sterreich/",
         );
-        this.youtubeLink = this.socialLink("https://www.youtube.com/@qgishome");
-        this.mastodonLink = this.socialLink("https://fosstodon.org/@qgis");
-        this.ghLink = this.socialLink("https://github.com/qgis/");
-        this.mailLink = this.socialLink(
-            "https://qgis.org/community/organisation/mailinglists",
-        );
+        this.ghLink = this.socialLink("https://github.com/QGIS-Austria");
+        this.mailLink = this.socialLink("mailto:info@qgis.at");
 
         this.issueReportLink = this.banner.getByRole("link", {
             name: "Report an issue here",

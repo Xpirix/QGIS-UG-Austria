@@ -2,6 +2,7 @@
 # Update baseURL for your specific User Group deployment
 baseURL = 'https://usergroup.qgis.org/'
 locale = 'de-at'
+languageCode = 'de-at'
 title = 'QGIS Österreich'
 theme = 'qgis-website-theme'
 # Default pagination.
@@ -33,6 +34,8 @@ enableRobotsTXT = false
 [params]
 # Min hugo version
 minHugoVersion = "0.139.0"
+# Site meta description
+description = "Die QGIS Anwendergruppe Österreich fördert das freie Geoinformationssystem QGIS und unterstützt QGIS-Anwender:innen in Österreich."
 # Brand colours:
 primary1 = "#589632"
 primary2 = "#55828b"
@@ -47,7 +50,6 @@ primary4-invert = "#363636"
 primary5-invert = "#eeeeee"
 primary6-invert = "#fff"
 links = "#3A9800"
-# TODO update these to gradient colours like above
 complementary1 = "#93B023"
 complementary2 = "#ee7913"
 complementary3 = "#EEE766"
@@ -103,11 +105,6 @@ uniNavHeaderLocationPrefix = "https://qgis.org"
 ## Logo shown in the top navigation (square 512px roundel - crisp on HiDPI;
 ## the full 604x428 letterhead logo at img/qgis_at.png is used for the hero)
 uniNavHeaderLogoIcon = 'img/qgis_at_icon.png'
-
-## Url to news feed. After URL change you have to check 
-## themes/qgis-website-theme/layouts/partials/contextmenu.html 
-## file to ensure that it adresses the correct keys 
-newsfeed ='https://feed.qgis.org/?lang=en&json=1'
 
 ## This will turn on Coockie popup. True to show popup
 cookiesstate = false

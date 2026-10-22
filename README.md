@@ -1,11 +1,12 @@
-# 🌐 QGIS User Group Website Template
+# 🌐 QGIS Österreich — Website
 
-> ## 👋 Welcome to the QGIS User Group Website Template!
+> ## 👋 Willkommen!
 >
-> **This repository provides a template for creating QGIS User Group websites:**
-> 🌍 Hosted as subdomains of qgis.org (e.g., `yourgroup.qgis.org`)
+> **This repository contains the website of the QGIS Anwendergruppe Österreich (Austrian QGIS User Group).**
+> 🌍 Deployed at https://qgis.github.io/QGIS-UG-Austria/
+> 📧 Kontakt: info@qgis.at
 >
-> Here you'll find everything you need to **build, develop, and customize** your User Group Website.
+> Built with [Hugo](https://gohugo.io/) on top of the [QGIS User Group Website Template](https://github.com/qgis/QGIS-User-Group-Website) and the shared [QGIS Hugo Website Theme](https://github.com/qgis/QGIS-Hugo-Website-Theme).
 
 ![-----------------------------------------------------](./img/green-gradient.png)
 
@@ -30,12 +31,16 @@
 
 ## 🚀 Project Overview
 
-This template is designed for QGIS User Groups to quickly set up a professional website with:
+This site is built from the QGIS User Group Website template and provides:
 
-- **Home page** - Welcome visitors and introduce your group
-- **Events page** - List upcoming and past events
-- **Who we are page** - Introduce your team and members
-- **Rules page** - Community guidelines and code of conduct
+- **Home page** - Willkommen bei der QGIS Anwendergruppe Österreich
+- **Verein** (`/about-us/`) - Wer wir sind und wofür der Verein steht
+- **Neuigkeiten** - Aktuelles aus der Anwendergruppe
+- **Arbeitsgruppen** - Unsere Arbeitsgruppen und ihre Themen
+- **Mitglied werden** - Informationen zur Mitgliedschaft
+- **Veranstaltungen** - Kommende und vergangene Events
+- **Blog** - Artikel und Beiträge rund um QGIS
+- **Datenschutzerklärung** - Datenschutzinformationen
 
 The template uses Hugo static site generator with a clean, responsive design that maintains consistency with the QGIS ecosystem.
 
