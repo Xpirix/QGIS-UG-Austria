@@ -43,11 +43,11 @@ const publishedPages: { path: string; h1: string; titleRe: RegExp }[] = [
 ];
 
 /**
- * Paths that must NOT be published: /rules/ is still a Hugo draft; the other
- * three template drafts were removed from content/ entirely (they now 404
- * because the files no longer exist).
+ * Paths that must NOT be published: /rules/ is still a Hugo draft; the three
+ * template drafts were removed from content/ entirely; /search/ is gone
+ * because the site search feature was removed (minimal site, no search UI).
  */
-const draftPages = ["/case-studies/", "/community/", "/tutorials/", "/rules/"];
+const unpublishedPaths = ["/case-studies/", "/community/", "/tutorials/", "/rules/", "/search/"];
 
 test.describe("Published sub-pages", () => {
     for (const p of publishedPages) {
@@ -104,8 +104,8 @@ test.describe("Published sub-pages", () => {
     });
 });
 
-test.describe("Draft pages are not published", () => {
-    for (const path of draftPages) {
+test.describe("Unpublished paths return 404", () => {
+    for (const path of unpublishedPaths) {
         test(`${path} returns 404`, async ({ page }) => {
             const response = await page.goto(path, {
                 waitUntil: "domcontentloaded",
@@ -113,7 +113,7 @@ test.describe("Draft pages are not published", () => {
             expect(response, `${path}: no response received`).not.toBeNull();
             expect(
                 response!.status(),
-                `${path} should be a draft (404) but was published`,
+                `${path} should not be published (expected 404)`,
             ).toBe(404);
         });
     }
