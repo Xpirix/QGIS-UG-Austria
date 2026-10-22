@@ -137,4 +137,19 @@ test.describe("Home page", () => {
             /^https:\/\/github\.com\/qgis\/QGIS-UG-Austria\/commit\/[0-9a-f]+$/,
         );
     });
+
+    test("home page raises no JavaScript errors", async ({ page }) => {
+        // Regression guard: removing the search input used to make the
+        // theme's navbar.js throw a TypeError (null.addEventListener) on
+        // EVERY page. A green suite must not tolerate silent JS breakage.
+        const errors: string[] = [];
+        page.on("pageerror", (e) => errors.push(e.message));
+        // Navigate again so the listener is attached before the load
+        await page.goto("/", { waitUntil: "domcontentloaded" });
+        // let the deferred bundles execute and settle
+        await page.waitForTimeout(1500);
+        expect(errors, `unexpected JS errors: ${errors.join(" | ")}`).toEqual(
+            [],
+        );
+    });
 });

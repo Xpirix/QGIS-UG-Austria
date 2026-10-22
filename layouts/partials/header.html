@@ -160,19 +160,16 @@
         {{ $animatejs := resources.Get "js/animate.js" }}
         {{ $navbarjs := resources.Get "js/navbar.js" }}
         {{ $qrcreatejs := resources.Get "js/qrcreate.js" }}
-        {{ $fusejs := resources.Get "js/fuse.js" }}
-        {{ $markjs := resources.Get "js/mark.min.js" }}
         {{ $matomojs := resources.Get "js/matomo.js" }}
         {{/* See https://www.youtube.com/watch?v=T33NN_pPeNI */}}
-        {{ $js := slice $animatejs $expandjs $navbarjs $qrcreatejs $fusejs $markjs $matomojs | resources.Concat "js/all.js" | resources.Minify | resources.Fingerprint }}
+        {{ $js := slice $animatejs $expandjs $navbarjs $qrcreatejs $matomojs | resources.Concat "js/all.js" | resources.Minify | resources.Fingerprint }}
         {{ if (eq .Site.Params.cookiesstate true) }}
             {{ $cookiejs := resources.Get "js/cookie.js" }}
-            {{ $js = slice $animatejs $expandjs $navbarjs $qrcreatejs $fusejs $markjs $matomojs $cookiejs | resources.Concat "js/all.js" | resources.Minify | resources.Fingerprint }}
+            {{ $js = slice $animatejs $expandjs $navbarjs $qrcreatejs $matomojs $cookiejs | resources.Concat "js/all.js" | resources.Minify | resources.Fingerprint }}
         {{ end }}   
         <script defer src="{{ $js.RelPermalink }}"></script> 
-        {{/* Search needs to be rendered as a template to ensure urls are correct */}}
-        {{ $searchjs := resources.Get "js/search.js" | resources.ExecuteAsTemplate "search.js" . | resources.Minify | resources.Fingerprint }}
-        <script defer src="{{ $searchjs.RelPermalink }}"></script>
+        {{/* The site search was removed (minimal site, no search UI): the
+            theme's search.js (plus fuse.js/mark.min.js) are no longer loaded. */}}
         {{/* The qg-top-nav navigation component is vendored locally (no external
             CDN calls) - see static/vendor/qgis-uni-navigation/README.md.
             The window.QG_UNI_NAV_* globals MUST be set before index.js executes,

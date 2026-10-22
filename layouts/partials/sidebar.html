@@ -93,15 +93,11 @@ function toggleMenu() {
     document.getElementById('hamburger-btn').classList.toggle('open');
 }
 
-// compose title for menu button: contatenate parent section titles
-let items = document.getElementById('sidebar').getElementsByClassName('is-active');
-let activeListItem = items[items.length - 1];
-let ham = document.getElementById('ham-title');
-let hamTitle = activeListItem.querySelector('a').textContent;
-if (activeListItem.parentElement.previousElementSibling != null) {
-    hamTitle = activeListItem.parentElement.previousElementSibling.querySelector('a').textContent + ' / ' + hamTitle;
-}
-ham.textContent = hamTitle;
+// NOTE: the template's "compose title for menu button" block was removed
+// here: it referenced #ham-title / an active sidebar item unconditionally
+// and threw a TypeError on EVERY page (the hamburger button it belonged to
+// is commented out above). toggleMenu() is kept for the commented-out
+// hamburger markup; the active-section expander below is live and stays.
 
 // expand active section
 document.querySelectorAll('li.is-active,li:has(.is-active)').forEach(li => {

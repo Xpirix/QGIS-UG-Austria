@@ -353,6 +353,6 @@ sectionPagesMenu = 'main'
   weight = 240
 
 [outputs]
-  home = ["HTML", "RSS", "JSON"]
+  home = ["HTML", "RSS"]
 
 

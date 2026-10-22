@@ -150,8 +150,9 @@
       check_status "/datenschutzerklaerung/" "200" "Datenschutzerklärung page returns HTTP 200"
       check_content "/datenschutzerklaerung/" "Datenschutzerklärung" "Datenschutzerklärung page has expected content"
 
-      # Search index (JSON output enabled on home)
-      check_status "/index.json" "200" "Search JSON index returns HTTP 200"
+      # The site search was removed (minimal site): no search UI, no JSON
+      # index output, /search/ must be gone.
+      check_status "/search/" "404" "Search page is gone (feature removed)"
 
       # 404 handling
       check_status "/this-page-does-not-exist/" "404" "Non-existent path returns HTTP 404"

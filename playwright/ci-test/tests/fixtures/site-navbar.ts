@@ -11,7 +11,6 @@ import type { Page, Locator } from "@playwright/test";
  */
 export class SiteNavbar {
     public readonly root: Locator;
-    public readonly searchbox: Locator;
 
     /**
      * The eight German menu entries as [accessible name, site path] pairs.
@@ -31,10 +30,6 @@ export class SiteNavbar {
 
     constructor(public readonly page: Page) {
         this.root = this.page.locator("#context nav");
-        // A second search input exists in the DOM but is display:none on the
-        // desktop viewport, so getByRole only matches the visible one; the
-        // #context-nav scope keeps it strict-safe regardless.
-        this.searchbox = this.root.getByRole("searchbox", { name: "Search" });
     }
 
     menuLink(name: string): Locator {

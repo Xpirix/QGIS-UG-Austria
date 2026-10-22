@@ -89,7 +89,7 @@ test.describe("Navigation", () => {
         }
     });
 
-    test("Site navbar (#context): German menu + search", async ({ navbar }) => {
+    test("Site navbar (#context): German menu", async ({ navbar }) => {
         await expect(navbar.root).toBeVisible();
 
         // All eight German menu links visible; hrefs are root-relative
@@ -103,9 +103,29 @@ test.describe("Navigation", () => {
                 `${navbar.origin}${path}`,
             );
         }
+    });
 
-        // Exactly one visible searchbox, empty
-        await expect(navbar.searchbox).toBeVisible();
-        await expect(navbar.searchbox).toBeEmpty();
+    test("Context navbar: hides on scroll down, shows on scroll up", async ({
+        page,
+    }) => {
+        // navbar.js registers window.onscroll only if it survives to the end
+        // of the script (regression: the removed search input used to kill it
+        // with a TypeError before the handler was registered).
+        const context = page.locator("#context");
+        await expect(context).toBeVisible();
+
+        await page.evaluate(() => window.scrollTo(0, 1200));
+        await page.waitForTimeout(300);
+        expect(
+            await context.evaluate((el) => (el as HTMLElement).style.top),
+            "context bar should hide (top:-2em) after scrolling down",
+        ).toBe("-2em");
+
+        await page.evaluate(() => window.scrollTo(0, 600));
+        await page.waitForTimeout(300);
+        expect(
+            await context.evaluate((el) => (el as HTMLElement).style.top),
+            "context bar should show (top:4rem) after scrolling up",
+        ).toBe("4rem");
     });
 });
