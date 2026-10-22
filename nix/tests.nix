@@ -125,9 +125,10 @@
       check_content "/" "linkedin.com/company/qgis-anwendergruppe" "Homepage links the LinkedIn company page"
 
       # Published pages
-      # NOTE: /case-studies/, /community/, /tutorials/ and /rules/ are Hugo drafts
-      # and are not published (they return HTTP 404). Re-add checks for them here
-      # if/when those pages get published.
+      # NOTE: the template draft pages /case-studies/, /community/ and
+      # /tutorials/ were removed from content/ entirely; /rules/ is still a
+      # Hugo draft. None of these paths are published (HTTP 404). Add checks
+      # here if/when such pages get created and published.
       check_status "/about-us/" "200" "About Us page returns HTTP 200"
       check_content "/about-us/" "Der Verein" "About Us page has expected content"
 

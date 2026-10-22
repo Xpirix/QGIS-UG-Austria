@@ -42,7 +42,11 @@ const publishedPages: { path: string; h1: string; titleRe: RegExp }[] = [
     },
 ];
 
-/** Pages whose content is still draft and must NOT be published. */
+/**
+ * Paths that must NOT be published: /rules/ is still a Hugo draft; the other
+ * three template drafts were removed from content/ entirely (they now 404
+ * because the files no longer exist).
+ */
 const draftPages = ["/case-studies/", "/community/", "/tutorials/", "/rules/"];
 
 test.describe("Published sub-pages", () => {

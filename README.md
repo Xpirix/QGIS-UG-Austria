@@ -143,10 +143,7 @@ All content is in the `content/` directory:
 - `_index.md` - Home page
 - `events.md` - Events listing
 - `about.md` - Team and member information
-- `rules.md` - Community guidelines
-- `case-studies.md` - Local project highlights
-- `community.md` - Join and contribute
-- `tutorials.md` - QGIS tutorials list
+- `rules.md` - Community guidelines (draft, not published yet)
 - `blog/_index.md` - Blog intro and list
 
 You are free to edit or add new files as needed to customize your content. The files use Markdown with Hugo shortcodes.
