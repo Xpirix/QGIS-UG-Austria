@@ -38,7 +38,7 @@ export class HomePage {
     public readonly contactLinkedInLink: Locator;
     public static readonly expectedLinkedInHref =
         "https://www.linkedin.com/company/qgis-anwendergruppe-%C3%B6sterreich/";
-    public static readonly expectedPhone = "+43 664 4852504";
+    public static readonly expectedPhone = "+43 660 4064306";
     public static readonly expectedAddress =
         "QGIS Anwendergruppe Österreich, Unterlinden 16a, 6922 Wolfurt";
 

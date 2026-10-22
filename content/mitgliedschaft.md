@@ -17,7 +17,7 @@ E-Mail an [info@qgis.at](mailto:info@qgis.at) zu.
 ## Kontakt
 
 - **E-Mail:** [info@qgis.at](mailto:info@qgis.at)
-- **Telefon:** +43 664 4852504
+- **Telefon:** +43 660 4064306
 
 **Adresse:**
 
