@@ -18,20 +18,46 @@ QGIS-Begeisterte aus Österreich zu treffen.
 
 {{< rich-box-start layoutClass="has-right rounded" >}}
 {{< rich-content-start themeClass="coloring-2" >}}
-### Jahrestreffen der QGIS Anwendergruppe Österreich
+### QGIS-Anwendertreffen Österreich 2026 in Traunkirchen
 
-Die Generalversammlung findet einmal pro Jahr statt – alle Mitglieder sind
-herzlich eingeladen.
+Am 25. November 2026 lädt die QGIS-Anwendergruppe Österreich zum diesjährigen
+QGIS-Anwendertreffen in Präsenz in die
+[Forstliche Ausbildungsstätte Traunkirchen](https://fasttraunkirchen.at/) ein.
 
-Wann: [Termin folgt]  
-Wo: [Ort / Online]
+Freuen Sie sich auf einen spannenden Tag mit Fachvorträgen, Praxisbeispielen
+und Workshops rund um Naturgefahren, Risikomanagement, Klimawandel und
+Forstwirtschaft. Die Veranstaltung bietet eine ideale Gelegenheit, sich über
+aktuelle Entwicklungen im QGIS-Ökosystem auszutauschen, neue Kontakte zu
+knüpfen und Erfahrungen aus Forschung, Verwaltung und Praxis zu teilen.
 
-{{< button class = "is-primary1" link = "mailto:info@qgis.at" text = "Kontakt aufnehmen" >}}
+**Datum:** 25. November 2026  
+**Ort:** Forstliche Ausbildungsstätte Traunkirchen
+
+{{< button class = "is-primary1" link = "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=F2TBwxPB-UuuhOllR18lLPTBIBij2ydPlY_YfyIgu4VUQzZKWjBHSE8yRzJFMkhNM09XNzZQQzgyRi4u" text = "Zur Anmeldung" >}}
 
 {{< rich-content-end >}}
 {{< rich-right-start >}}
 ![](../img/oldsite/workshops.jpg)
 {{< rich-right-end >}}
+{{< rich-box-end >}}
+
+{{< rich-box-start layoutClass="rounded" >}}
+{{< rich-content-start themeClass="coloring-1" >}}
+### Jahreshauptversammlung der QGIS-Anwendergruppe Österreich
+
+Bereits am 24. November 2026 findet unsere Jahreshauptversammlung statt.
+Dazu sind alle Mitglieder herzlich eingeladen.
+
+Die Jahreshauptversammlung wird hybrid durchgeführt, sodass eine Teilnahme
+sowohl vor Ort in Traunkirchen als auch online möglich ist. Wir freuen uns
+über zahlreiche Anmeldungen und Ihre Teilnahme.
+
+**Datum:** 24. November 2026  
+**Ort:** Traunkirchen & online (hybrid)
+
+{{< button class = "is-primary1" link = "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=F2TBwxPB-UuuhOllR18lLPTBIBij2ydPlY_YfyIgu4VUQzZKWjBHSE8yRzJFMkhNM09XNzZQQzgyRi4u" text = "Zur Anmeldung" >}}
+
+{{< rich-content-end >}}
 {{< rich-box-end >}}
 
 {{< columns-start >}}
